@@ -42,10 +42,8 @@ func main() {
 			fmt.Println(fmt.Errorf("failed to parse account %s : %w", account.Pubkey, err))
 			continue
 		}
-		println("Account:", account.Pubkey, "Data Length:", len(dataBytes))
+		fmt.Println("Account:", account.Pubkey, "Data Length:", len(dataBytes))
 		spew.Dump(parsedAccount)
-		// Process the data bytes as needed
-		// For example, print the length of the data
 	}
 	if err := scanner.Err(); err != nil {
 		panic(err)
@@ -61,9 +59,7 @@ type Account struct {
 	Data       string `json:"data"`
 }
 
-// GetDataBytes
 func (a *Account) GetDataBytes() ([]byte, error) {
-	// decode as base64
 	return base64.StdEncoding.DecodeString(a.Data)
 }
 
