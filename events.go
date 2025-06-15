@@ -10,7 +10,7 @@ import (
 
 func ParseAnyEvent(eventData []byte) (any, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek event discriminator: %w", err)
 	}
@@ -134,7 +134,7 @@ func ParseAnyEvent(eventData []byte) (any, error) {
 
 func ParseEvent_CreatePositionRequestEvent(eventData []byte) (*CreatePositionRequestEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -151,7 +151,7 @@ func ParseEvent_CreatePositionRequestEvent(eventData []byte) (*CreatePositionReq
 
 func ParseEvent_InstantCreateTpslEvent(eventData []byte) (*InstantCreateTpslEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -168,7 +168,7 @@ func ParseEvent_InstantCreateTpslEvent(eventData []byte) (*InstantCreateTpslEven
 
 func ParseEvent_InstantUpdateTpslEvent(eventData []byte) (*InstantUpdateTpslEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -185,7 +185,7 @@ func ParseEvent_InstantUpdateTpslEvent(eventData []byte) (*InstantUpdateTpslEven
 
 func ParseEvent_ClosePositionRequestEvent(eventData []byte) (*ClosePositionRequestEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -202,7 +202,7 @@ func ParseEvent_ClosePositionRequestEvent(eventData []byte) (*ClosePositionReque
 
 func ParseEvent_IncreasePositionEvent(eventData []byte) (*IncreasePositionEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -219,7 +219,7 @@ func ParseEvent_IncreasePositionEvent(eventData []byte) (*IncreasePositionEvent,
 
 func ParseEvent_IncreasePositionPreSwapEvent(eventData []byte) (*IncreasePositionPreSwapEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -236,7 +236,7 @@ func ParseEvent_IncreasePositionPreSwapEvent(eventData []byte) (*IncreasePositio
 
 func ParseEvent_DecreasePositionEvent(eventData []byte) (*DecreasePositionEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -253,7 +253,7 @@ func ParseEvent_DecreasePositionEvent(eventData []byte) (*DecreasePositionEvent,
 
 func ParseEvent_DecreasePositionPostSwapEvent(eventData []byte) (*DecreasePositionPostSwapEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -270,7 +270,7 @@ func ParseEvent_DecreasePositionPostSwapEvent(eventData []byte) (*DecreasePositi
 
 func ParseEvent_LiquidateFullPositionEvent(eventData []byte) (*LiquidateFullPositionEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -287,7 +287,7 @@ func ParseEvent_LiquidateFullPositionEvent(eventData []byte) (*LiquidateFullPosi
 
 func ParseEvent_PoolSwapEvent(eventData []byte) (*PoolSwapEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -304,7 +304,7 @@ func ParseEvent_PoolSwapEvent(eventData []byte) (*PoolSwapEvent, error) {
 
 func ParseEvent_PoolSwapExactOutEvent(eventData []byte) (*PoolSwapExactOutEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -321,7 +321,7 @@ func ParseEvent_PoolSwapExactOutEvent(eventData []byte) (*PoolSwapExactOutEvent,
 
 func ParseEvent_AddLiquidityEvent(eventData []byte) (*AddLiquidityEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -338,7 +338,7 @@ func ParseEvent_AddLiquidityEvent(eventData []byte) (*AddLiquidityEvent, error) 
 
 func ParseEvent_RemoveLiquidityEvent(eventData []byte) (*RemoveLiquidityEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -355,7 +355,7 @@ func ParseEvent_RemoveLiquidityEvent(eventData []byte) (*RemoveLiquidityEvent, e
 
 func ParseEvent_InstantCreateLimitOrderEvent(eventData []byte) (*InstantCreateLimitOrderEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -372,7 +372,7 @@ func ParseEvent_InstantCreateLimitOrderEvent(eventData []byte) (*InstantCreateLi
 
 func ParseEvent_InstantIncreasePositionEvent(eventData []byte) (*InstantIncreasePositionEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -389,7 +389,7 @@ func ParseEvent_InstantIncreasePositionEvent(eventData []byte) (*InstantIncrease
 
 func ParseEvent_InstantDecreasePositionEvent(eventData []byte) (*InstantDecreasePositionEvent, error) {
 	decoder := binary.NewBorshDecoder(eventData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}

@@ -10,7 +10,7 @@ import (
 
 func ParseAnyAccount(accountData []byte) (any, error) {
 	decoder := binary.NewBorshDecoder(accountData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek account discriminator: %w", err)
 	}
@@ -64,7 +64,7 @@ func ParseAnyAccount(accountData []byte) (any, error) {
 
 func ParseAccount_Custody(accountData []byte) (*Custody, error) {
 	decoder := binary.NewBorshDecoder(accountData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -81,7 +81,7 @@ func ParseAccount_Custody(accountData []byte) (*Custody, error) {
 
 func ParseAccount_Perpetuals(accountData []byte) (*Perpetuals, error) {
 	decoder := binary.NewBorshDecoder(accountData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -98,7 +98,7 @@ func ParseAccount_Perpetuals(accountData []byte) (*Perpetuals, error) {
 
 func ParseAccount_Pool(accountData []byte) (*Pool, error) {
 	decoder := binary.NewBorshDecoder(accountData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -115,7 +115,7 @@ func ParseAccount_Pool(accountData []byte) (*Pool, error) {
 
 func ParseAccount_PositionRequest(accountData []byte) (*PositionRequest, error) {
 	decoder := binary.NewBorshDecoder(accountData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -132,7 +132,7 @@ func ParseAccount_PositionRequest(accountData []byte) (*PositionRequest, error) 
 
 func ParseAccount_Position(accountData []byte) (*Position, error) {
 	decoder := binary.NewBorshDecoder(accountData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}
@@ -149,7 +149,7 @@ func ParseAccount_Position(accountData []byte) (*Position, error) {
 
 func ParseAccount_TokenLedger(accountData []byte) (*TokenLedger, error) {
 	decoder := binary.NewBorshDecoder(accountData)
-	discriminator, err := decoder.PeekDiscriminator()
+	discriminator, err := decoder.ReadDiscriminator()
 	if err != nil {
 		return nil, fmt.Errorf("failed to peek discriminator: %w", err)
 	}

@@ -6,8 +6,8 @@ package perpetuals
 import (
 	"bytes"
 	"fmt"
-	binary "github.com/gagliardetto/binary"
 	errors "github.com/gagliardetto/anchor-go/errors"
+	binary "github.com/gagliardetto/binary"
 	solanago "github.com/gagliardetto/solana-go"
 )
 
@@ -31,82 +31,82 @@ type AddCustodyParams struct {
 }
 
 func (obj AddCustodyParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `IsStable` param:
+	// Serialize `IsStable`:
 	err = encoder.Encode(obj.IsStable)
 	if err != nil {
 		return errors.NewField("IsStable", err)
 	}
-	// Serialize `Oracle` param:
+	// Serialize `Oracle`:
 	err = encoder.Encode(obj.Oracle)
 	if err != nil {
 		return errors.NewField("Oracle", err)
 	}
-	// Serialize `Pricing` param:
+	// Serialize `Pricing`:
 	err = encoder.Encode(obj.Pricing)
 	if err != nil {
 		return errors.NewField("Pricing", err)
 	}
-	// Serialize `Permissions` param:
+	// Serialize `Permissions`:
 	err = encoder.Encode(obj.Permissions)
 	if err != nil {
 		return errors.NewField("Permissions", err)
 	}
-	// Serialize `HourlyFundingDbps` param:
+	// Serialize `HourlyFundingDbps`:
 	err = encoder.Encode(obj.HourlyFundingDbps)
 	if err != nil {
 		return errors.NewField("HourlyFundingDbps", err)
 	}
-	// Serialize `TargetRatioBps` param:
+	// Serialize `TargetRatioBps`:
 	err = encoder.Encode(obj.TargetRatioBps)
 	if err != nil {
 		return errors.NewField("TargetRatioBps", err)
 	}
-	// Serialize `IncreasePositionBps` param:
+	// Serialize `IncreasePositionBps`:
 	err = encoder.Encode(obj.IncreasePositionBps)
 	if err != nil {
 		return errors.NewField("IncreasePositionBps", err)
 	}
-	// Serialize `DecreasePositionBps` param:
+	// Serialize `DecreasePositionBps`:
 	err = encoder.Encode(obj.DecreasePositionBps)
 	if err != nil {
 		return errors.NewField("DecreasePositionBps", err)
 	}
-	// Serialize `DovesOracle` param:
+	// Serialize `DovesOracle`:
 	err = encoder.Encode(obj.DovesOracle)
 	if err != nil {
 		return errors.NewField("DovesOracle", err)
 	}
-	// Serialize `MaxPositionSizeUsd` param:
+	// Serialize `MaxPositionSizeUsd`:
 	err = encoder.Encode(obj.MaxPositionSizeUsd)
 	if err != nil {
 		return errors.NewField("MaxPositionSizeUsd", err)
 	}
-	// Serialize `JumpRate` param:
+	// Serialize `JumpRate`:
 	err = encoder.Encode(obj.JumpRate)
 	if err != nil {
 		return errors.NewField("JumpRate", err)
 	}
-	// Serialize `PriceImpactFeeFactor` param:
+	// Serialize `PriceImpactFeeFactor`:
 	err = encoder.Encode(obj.PriceImpactFeeFactor)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeFactor", err)
 	}
-	// Serialize `PriceImpactExponent` param:
+	// Serialize `PriceImpactExponent`:
 	err = encoder.Encode(obj.PriceImpactExponent)
 	if err != nil {
 		return errors.NewField("PriceImpactExponent", err)
 	}
-	// Serialize `DeltaImbalanceThresholdDecimal` param:
+	// Serialize `DeltaImbalanceThresholdDecimal`:
 	err = encoder.Encode(obj.DeltaImbalanceThresholdDecimal)
 	if err != nil {
 		return errors.NewField("DeltaImbalanceThresholdDecimal", err)
 	}
-	// Serialize `MaxFeeBps` param:
+	// Serialize `MaxFeeBps`:
 	err = encoder.Encode(obj.MaxFeeBps)
 	if err != nil {
 		return errors.NewField("MaxFeeBps", err)
 	}
-	// Serialize `DovesAgOracle` param:
+	// Serialize `DovesAgOracle`:
 	err = encoder.Encode(obj.DovesAgOracle)
 	if err != nil {
 		return errors.NewField("DovesAgOracle", err)
@@ -232,17 +232,17 @@ type AddLiquidity2Params struct {
 }
 
 func (obj AddLiquidity2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `TokenAmountIn` param:
+	// Serialize `TokenAmountIn`:
 	err = encoder.Encode(obj.TokenAmountIn)
 	if err != nil {
 		return errors.NewField("TokenAmountIn", err)
 	}
-	// Serialize `MinLpAmountOut` param:
+	// Serialize `MinLpAmountOut`:
 	err = encoder.Encode(obj.MinLpAmountOut)
 	if err != nil {
 		return errors.NewField("MinLpAmountOut", err)
 	}
-	// Serialize `TokenAmountPreSwap` param (optional):
+	// Serialize `TokenAmountPreSwap` (optional):
 	{
 		if obj.TokenAmountPreSwap == nil {
 			err = encoder.WriteOption(false)
@@ -325,22 +325,22 @@ type AddPoolParams struct {
 }
 
 func (obj AddPoolParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Name` param:
+	// Serialize `Name`:
 	err = encoder.Encode(obj.Name)
 	if err != nil {
 		return errors.NewField("Name", err)
 	}
-	// Serialize `Limit` param:
+	// Serialize `Limit`:
 	err = encoder.Encode(obj.Limit)
 	if err != nil {
 		return errors.NewField("Limit", err)
 	}
-	// Serialize `Fees` param:
+	// Serialize `Fees`:
 	err = encoder.Encode(obj.Fees)
 	if err != nil {
 		return errors.NewField("Fees", err)
 	}
-	// Serialize `MaxRequestExecutionSec` param:
+	// Serialize `MaxRequestExecutionSec`:
 	err = encoder.Encode(obj.MaxRequestExecutionSec)
 	if err != nil {
 		return errors.NewField("MaxRequestExecutionSec", err)
@@ -446,22 +446,22 @@ type CreateDecreasePositionMarketRequestParams struct {
 }
 
 func (obj CreateDecreasePositionMarketRequestParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `CollateralUsdDelta` param:
+	// Serialize `CollateralUsdDelta`:
 	err = encoder.Encode(obj.CollateralUsdDelta)
 	if err != nil {
 		return errors.NewField("CollateralUsdDelta", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `PriceSlippage` param:
+	// Serialize `PriceSlippage`:
 	err = encoder.Encode(obj.PriceSlippage)
 	if err != nil {
 		return errors.NewField("PriceSlippage", err)
 	}
-	// Serialize `JupiterMinimumOut` param (optional):
+	// Serialize `JupiterMinimumOut` (optional):
 	{
 		if obj.JupiterMinimumOut == nil {
 			err = encoder.WriteOption(false)
@@ -479,7 +479,7 @@ func (obj CreateDecreasePositionMarketRequestParams) MarshalWithEncoder(encoder 
 			}
 		}
 	}
-	// Serialize `EntirePosition` param (optional):
+	// Serialize `EntirePosition` (optional):
 	{
 		if obj.EntirePosition == nil {
 			err = encoder.WriteOption(false)
@@ -497,7 +497,7 @@ func (obj CreateDecreasePositionMarketRequestParams) MarshalWithEncoder(encoder 
 			}
 		}
 	}
-	// Serialize `Counter` param:
+	// Serialize `Counter`:
 	err = encoder.Encode(obj.Counter)
 	if err != nil {
 		return errors.NewField("Counter", err)
@@ -595,22 +595,22 @@ type CreateDecreasePositionRequest2Params struct {
 }
 
 func (obj CreateDecreasePositionRequest2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `CollateralUsdDelta` param:
+	// Serialize `CollateralUsdDelta`:
 	err = encoder.Encode(obj.CollateralUsdDelta)
 	if err != nil {
 		return errors.NewField("CollateralUsdDelta", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `RequestType` param:
+	// Serialize `RequestType`:
 	err = encoder.Encode(obj.RequestType)
 	if err != nil {
 		return errors.NewField("RequestType", err)
 	}
-	// Serialize `PriceSlippage` param (optional):
+	// Serialize `PriceSlippage` (optional):
 	{
 		if obj.PriceSlippage == nil {
 			err = encoder.WriteOption(false)
@@ -628,7 +628,7 @@ func (obj CreateDecreasePositionRequest2Params) MarshalWithEncoder(encoder *bina
 			}
 		}
 	}
-	// Serialize `JupiterMinimumOut` param (optional):
+	// Serialize `JupiterMinimumOut` (optional):
 	{
 		if obj.JupiterMinimumOut == nil {
 			err = encoder.WriteOption(false)
@@ -646,7 +646,7 @@ func (obj CreateDecreasePositionRequest2Params) MarshalWithEncoder(encoder *bina
 			}
 		}
 	}
-	// Serialize `TriggerPrice` param (optional):
+	// Serialize `TriggerPrice` (optional):
 	{
 		if obj.TriggerPrice == nil {
 			err = encoder.WriteOption(false)
@@ -664,7 +664,7 @@ func (obj CreateDecreasePositionRequest2Params) MarshalWithEncoder(encoder *bina
 			}
 		}
 	}
-	// Serialize `TriggerAboveThreshold` param (optional):
+	// Serialize `TriggerAboveThreshold` (optional):
 	{
 		if obj.TriggerAboveThreshold == nil {
 			err = encoder.WriteOption(false)
@@ -682,7 +682,7 @@ func (obj CreateDecreasePositionRequest2Params) MarshalWithEncoder(encoder *bina
 			}
 		}
 	}
-	// Serialize `EntirePosition` param (optional):
+	// Serialize `EntirePosition` (optional):
 	{
 		if obj.EntirePosition == nil {
 			err = encoder.WriteOption(false)
@@ -700,7 +700,7 @@ func (obj CreateDecreasePositionRequest2Params) MarshalWithEncoder(encoder *bina
 			}
 		}
 	}
-	// Serialize `Counter` param:
+	// Serialize `Counter`:
 	err = encoder.Encode(obj.Counter)
 	if err != nil {
 		return errors.NewField("Counter", err)
@@ -834,27 +834,27 @@ type CreateIncreasePositionMarketRequestParams struct {
 }
 
 func (obj CreateIncreasePositionMarketRequestParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralTokenDelta` param:
+	// Serialize `CollateralTokenDelta`:
 	err = encoder.Encode(obj.CollateralTokenDelta)
 	if err != nil {
 		return errors.NewField("CollateralTokenDelta", err)
 	}
-	// Serialize `Side` param:
+	// Serialize `Side`:
 	err = encoder.Encode(obj.Side)
 	if err != nil {
 		return errors.NewField("Side", err)
 	}
-	// Serialize `PriceSlippage` param:
+	// Serialize `PriceSlippage`:
 	err = encoder.Encode(obj.PriceSlippage)
 	if err != nil {
 		return errors.NewField("PriceSlippage", err)
 	}
-	// Serialize `JupiterMinimumOut` param (optional):
+	// Serialize `JupiterMinimumOut` (optional):
 	{
 		if obj.JupiterMinimumOut == nil {
 			err = encoder.WriteOption(false)
@@ -872,7 +872,7 @@ func (obj CreateIncreasePositionMarketRequestParams) MarshalWithEncoder(encoder 
 			}
 		}
 	}
-	// Serialize `Counter` param:
+	// Serialize `Counter`:
 	err = encoder.Encode(obj.Counter)
 	if err != nil {
 		return errors.NewField("Counter", err)
@@ -956,17 +956,17 @@ type CreateTokenMetadataParams struct {
 }
 
 func (obj CreateTokenMetadataParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Name` param:
+	// Serialize `Name`:
 	err = encoder.Encode(obj.Name)
 	if err != nil {
 		return errors.NewField("Name", err)
 	}
-	// Serialize `Symbol` param:
+	// Serialize `Symbol`:
 	err = encoder.Encode(obj.Symbol)
 	if err != nil {
 		return errors.NewField("Symbol", err)
 	}
-	// Serialize `Uri` param:
+	// Serialize `Uri`:
 	err = encoder.Encode(obj.Uri)
 	if err != nil {
 		return errors.NewField("Uri", err)
@@ -1099,7 +1099,7 @@ type GetAddLiquidityAmountAndFee2Params struct {
 }
 
 func (obj GetAddLiquidityAmountAndFee2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `TokenAmountIn` param:
+	// Serialize `TokenAmountIn`:
 	err = encoder.Encode(obj.TokenAmountIn)
 	if err != nil {
 		return errors.NewField("TokenAmountIn", err)
@@ -1148,7 +1148,7 @@ type GetAssetsUnderManagement2Params struct {
 }
 
 func (obj GetAssetsUnderManagement2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Mode` param (optional):
+	// Serialize `Mode` (optional):
 	{
 		if obj.Mode == nil {
 			err = encoder.WriteOption(false)
@@ -1218,7 +1218,7 @@ type GetRemoveLiquidityAmountAndFee2Params struct {
 }
 
 func (obj GetRemoveLiquidityAmountAndFee2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `LpAmountIn` param:
+	// Serialize `LpAmountIn`:
 	err = encoder.Encode(obj.LpAmountIn)
 	if err != nil {
 		return errors.NewField("LpAmountIn", err)
@@ -1384,37 +1384,37 @@ type InitParams struct {
 }
 
 func (obj InitParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `AllowSwap` param:
+	// Serialize `AllowSwap`:
 	err = encoder.Encode(obj.AllowSwap)
 	if err != nil {
 		return errors.NewField("AllowSwap", err)
 	}
-	// Serialize `AllowAddLiquidity` param:
+	// Serialize `AllowAddLiquidity`:
 	err = encoder.Encode(obj.AllowAddLiquidity)
 	if err != nil {
 		return errors.NewField("AllowAddLiquidity", err)
 	}
-	// Serialize `AllowRemoveLiquidity` param:
+	// Serialize `AllowRemoveLiquidity`:
 	err = encoder.Encode(obj.AllowRemoveLiquidity)
 	if err != nil {
 		return errors.NewField("AllowRemoveLiquidity", err)
 	}
-	// Serialize `AllowIncreasePosition` param:
+	// Serialize `AllowIncreasePosition`:
 	err = encoder.Encode(obj.AllowIncreasePosition)
 	if err != nil {
 		return errors.NewField("AllowIncreasePosition", err)
 	}
-	// Serialize `AllowDecreasePosition` param:
+	// Serialize `AllowDecreasePosition`:
 	err = encoder.Encode(obj.AllowDecreasePosition)
 	if err != nil {
 		return errors.NewField("AllowDecreasePosition", err)
 	}
-	// Serialize `AllowCollateralWithdrawal` param:
+	// Serialize `AllowCollateralWithdrawal`:
 	err = encoder.Encode(obj.AllowCollateralWithdrawal)
 	if err != nil {
 		return errors.NewField("AllowCollateralWithdrawal", err)
 	}
-	// Serialize `AllowLiquidatePosition` param:
+	// Serialize `AllowLiquidatePosition`:
 	err = encoder.Encode(obj.AllowLiquidatePosition)
 	if err != nil {
 		return errors.NewField("AllowLiquidatePosition", err)
@@ -1499,37 +1499,37 @@ type InstantCreateLimitOrderParams struct {
 }
 
 func (obj InstantCreateLimitOrderParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralTokenDelta` param:
+	// Serialize `CollateralTokenDelta`:
 	err = encoder.Encode(obj.CollateralTokenDelta)
 	if err != nil {
 		return errors.NewField("CollateralTokenDelta", err)
 	}
-	// Serialize `Side` param:
+	// Serialize `Side`:
 	err = encoder.Encode(obj.Side)
 	if err != nil {
 		return errors.NewField("Side", err)
 	}
-	// Serialize `TriggerPrice` param:
+	// Serialize `TriggerPrice`:
 	err = encoder.Encode(obj.TriggerPrice)
 	if err != nil {
 		return errors.NewField("TriggerPrice", err)
 	}
-	// Serialize `TriggerAboveThreshold` param:
+	// Serialize `TriggerAboveThreshold`:
 	err = encoder.Encode(obj.TriggerAboveThreshold)
 	if err != nil {
 		return errors.NewField("TriggerAboveThreshold", err)
 	}
-	// Serialize `Counter` param:
+	// Serialize `Counter`:
 	err = encoder.Encode(obj.Counter)
 	if err != nil {
 		return errors.NewField("Counter", err)
 	}
-	// Serialize `RequestTime` param:
+	// Serialize `RequestTime`:
 	err = encoder.Encode(obj.RequestTime)
 	if err != nil {
 		return errors.NewField("RequestTime", err)
@@ -1614,37 +1614,37 @@ type InstantCreateTpslParams struct {
 }
 
 func (obj InstantCreateTpslParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `CollateralUsdDelta` param:
+	// Serialize `CollateralUsdDelta`:
 	err = encoder.Encode(obj.CollateralUsdDelta)
 	if err != nil {
 		return errors.NewField("CollateralUsdDelta", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `TriggerPrice` param:
+	// Serialize `TriggerPrice`:
 	err = encoder.Encode(obj.TriggerPrice)
 	if err != nil {
 		return errors.NewField("TriggerPrice", err)
 	}
-	// Serialize `TriggerAboveThreshold` param:
+	// Serialize `TriggerAboveThreshold`:
 	err = encoder.Encode(obj.TriggerAboveThreshold)
 	if err != nil {
 		return errors.NewField("TriggerAboveThreshold", err)
 	}
-	// Serialize `EntirePosition` param:
+	// Serialize `EntirePosition`:
 	err = encoder.Encode(obj.EntirePosition)
 	if err != nil {
 		return errors.NewField("EntirePosition", err)
 	}
-	// Serialize `Counter` param:
+	// Serialize `Counter`:
 	err = encoder.Encode(obj.Counter)
 	if err != nil {
 		return errors.NewField("Counter", err)
 	}
-	// Serialize `RequestTime` param:
+	// Serialize `RequestTime`:
 	err = encoder.Encode(obj.RequestTime)
 	if err != nil {
 		return errors.NewField("RequestTime", err)
@@ -1727,22 +1727,22 @@ type InstantDecreasePositionParams struct {
 }
 
 func (obj InstantDecreasePositionParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `CollateralUsdDelta` param:
+	// Serialize `CollateralUsdDelta`:
 	err = encoder.Encode(obj.CollateralUsdDelta)
 	if err != nil {
 		return errors.NewField("CollateralUsdDelta", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `PriceSlippage` param:
+	// Serialize `PriceSlippage`:
 	err = encoder.Encode(obj.PriceSlippage)
 	if err != nil {
 		return errors.NewField("PriceSlippage", err)
 	}
-	// Serialize `EntirePosition` param (optional):
+	// Serialize `EntirePosition` (optional):
 	{
 		if obj.EntirePosition == nil {
 			err = encoder.WriteOption(false)
@@ -1760,7 +1760,7 @@ func (obj InstantDecreasePositionParams) MarshalWithEncoder(encoder *binary.Enco
 			}
 		}
 	}
-	// Serialize `RequestTime` param:
+	// Serialize `RequestTime`:
 	err = encoder.Encode(obj.RequestTime)
 	if err != nil {
 		return errors.NewField("RequestTime", err)
@@ -1841,12 +1841,12 @@ type InstantIncreasePositionParams struct {
 }
 
 func (obj InstantIncreasePositionParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralTokenDelta` param (optional):
+	// Serialize `CollateralTokenDelta` (optional):
 	{
 		if obj.CollateralTokenDelta == nil {
 			err = encoder.WriteOption(false)
@@ -1864,17 +1864,17 @@ func (obj InstantIncreasePositionParams) MarshalWithEncoder(encoder *binary.Enco
 			}
 		}
 	}
-	// Serialize `Side` param:
+	// Serialize `Side`:
 	err = encoder.Encode(obj.Side)
 	if err != nil {
 		return errors.NewField("Side", err)
 	}
-	// Serialize `PriceSlippage` param:
+	// Serialize `PriceSlippage`:
 	err = encoder.Encode(obj.PriceSlippage)
 	if err != nil {
 		return errors.NewField("PriceSlippage", err)
 	}
-	// Serialize `RequestTime` param:
+	// Serialize `RequestTime`:
 	err = encoder.Encode(obj.RequestTime)
 	if err != nil {
 		return errors.NewField("RequestTime", err)
@@ -1953,17 +1953,17 @@ type InstantUpdateLimitOrderParams struct {
 }
 
 func (obj InstantUpdateLimitOrderParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `TriggerPrice` param:
+	// Serialize `TriggerPrice`:
 	err = encoder.Encode(obj.TriggerPrice)
 	if err != nil {
 		return errors.NewField("TriggerPrice", err)
 	}
-	// Serialize `RequestTime` param:
+	// Serialize `RequestTime`:
 	err = encoder.Encode(obj.RequestTime)
 	if err != nil {
 		return errors.NewField("RequestTime", err)
@@ -2024,17 +2024,17 @@ type InstantUpdateTpslParams struct {
 }
 
 func (obj InstantUpdateTpslParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `TriggerPrice` param:
+	// Serialize `TriggerPrice`:
 	err = encoder.Encode(obj.TriggerPrice)
 	if err != nil {
 		return errors.NewField("TriggerPrice", err)
 	}
-	// Serialize `RequestTime` param:
+	// Serialize `RequestTime`:
 	err = encoder.Encode(obj.RequestTime)
 	if err != nil {
 		return errors.NewField("RequestTime", err)
@@ -2140,57 +2140,57 @@ type OperatorSetCustodyConfigParams struct {
 }
 
 func (obj OperatorSetCustodyConfigParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Pricing` param:
+	// Serialize `Pricing`:
 	err = encoder.Encode(obj.Pricing)
 	if err != nil {
 		return errors.NewField("Pricing", err)
 	}
-	// Serialize `HourlyFundingDbps` param:
+	// Serialize `HourlyFundingDbps`:
 	err = encoder.Encode(obj.HourlyFundingDbps)
 	if err != nil {
 		return errors.NewField("HourlyFundingDbps", err)
 	}
-	// Serialize `TargetRatioBps` param:
+	// Serialize `TargetRatioBps`:
 	err = encoder.Encode(obj.TargetRatioBps)
 	if err != nil {
 		return errors.NewField("TargetRatioBps", err)
 	}
-	// Serialize `IncreasePositionBps` param:
+	// Serialize `IncreasePositionBps`:
 	err = encoder.Encode(obj.IncreasePositionBps)
 	if err != nil {
 		return errors.NewField("IncreasePositionBps", err)
 	}
-	// Serialize `DecreasePositionBps` param:
+	// Serialize `DecreasePositionBps`:
 	err = encoder.Encode(obj.DecreasePositionBps)
 	if err != nil {
 		return errors.NewField("DecreasePositionBps", err)
 	}
-	// Serialize `MaxPositionSizeUsd` param:
+	// Serialize `MaxPositionSizeUsd`:
 	err = encoder.Encode(obj.MaxPositionSizeUsd)
 	if err != nil {
 		return errors.NewField("MaxPositionSizeUsd", err)
 	}
-	// Serialize `JumpRate` param:
+	// Serialize `JumpRate`:
 	err = encoder.Encode(obj.JumpRate)
 	if err != nil {
 		return errors.NewField("JumpRate", err)
 	}
-	// Serialize `PriceImpactFeeFactor` param:
+	// Serialize `PriceImpactFeeFactor`:
 	err = encoder.Encode(obj.PriceImpactFeeFactor)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeFactor", err)
 	}
-	// Serialize `PriceImpactExponent` param:
+	// Serialize `PriceImpactExponent`:
 	err = encoder.Encode(obj.PriceImpactExponent)
 	if err != nil {
 		return errors.NewField("PriceImpactExponent", err)
 	}
-	// Serialize `DeltaImbalanceThresholdDecimal` param:
+	// Serialize `DeltaImbalanceThresholdDecimal`:
 	err = encoder.Encode(obj.DeltaImbalanceThresholdDecimal)
 	if err != nil {
 		return errors.NewField("DeltaImbalanceThresholdDecimal", err)
 	}
-	// Serialize `MaxFeeBps` param:
+	// Serialize `MaxFeeBps`:
 	err = encoder.Encode(obj.MaxFeeBps)
 	if err != nil {
 		return errors.NewField("MaxFeeBps", err)
@@ -2291,17 +2291,17 @@ type OperatorSetPoolConfigParams struct {
 }
 
 func (obj OperatorSetPoolConfigParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Fees` param:
+	// Serialize `Fees`:
 	err = encoder.Encode(obj.Fees)
 	if err != nil {
 		return errors.NewField("Fees", err)
 	}
-	// Serialize `Limit` param:
+	// Serialize `Limit`:
 	err = encoder.Encode(obj.Limit)
 	if err != nil {
 		return errors.NewField("Limit", err)
 	}
-	// Serialize `MaxRequestExecutionSec` param:
+	// Serialize `MaxRequestExecutionSec`:
 	err = encoder.Encode(obj.MaxRequestExecutionSec)
 	if err != nil {
 		return errors.NewField("MaxRequestExecutionSec", err)
@@ -2398,12 +2398,12 @@ type RemoveLiquidity2Params struct {
 }
 
 func (obj RemoveLiquidity2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `LpAmountIn` param:
+	// Serialize `LpAmountIn`:
 	err = encoder.Encode(obj.LpAmountIn)
 	if err != nil {
 		return errors.NewField("LpAmountIn", err)
 	}
-	// Serialize `MinAmountOut` param:
+	// Serialize `MinAmountOut`:
 	err = encoder.Encode(obj.MinAmountOut)
 	if err != nil {
 		return errors.NewField("MinAmountOut", err)
@@ -2471,77 +2471,77 @@ type SetCustodyConfigParams struct {
 }
 
 func (obj SetCustodyConfigParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Oracle` param:
+	// Serialize `Oracle`:
 	err = encoder.Encode(obj.Oracle)
 	if err != nil {
 		return errors.NewField("Oracle", err)
 	}
-	// Serialize `Pricing` param:
+	// Serialize `Pricing`:
 	err = encoder.Encode(obj.Pricing)
 	if err != nil {
 		return errors.NewField("Pricing", err)
 	}
-	// Serialize `Permissions` param:
+	// Serialize `Permissions`:
 	err = encoder.Encode(obj.Permissions)
 	if err != nil {
 		return errors.NewField("Permissions", err)
 	}
-	// Serialize `HourlyFundingDbps` param:
+	// Serialize `HourlyFundingDbps`:
 	err = encoder.Encode(obj.HourlyFundingDbps)
 	if err != nil {
 		return errors.NewField("HourlyFundingDbps", err)
 	}
-	// Serialize `TargetRatioBps` param:
+	// Serialize `TargetRatioBps`:
 	err = encoder.Encode(obj.TargetRatioBps)
 	if err != nil {
 		return errors.NewField("TargetRatioBps", err)
 	}
-	// Serialize `IncreasePositionBps` param:
+	// Serialize `IncreasePositionBps`:
 	err = encoder.Encode(obj.IncreasePositionBps)
 	if err != nil {
 		return errors.NewField("IncreasePositionBps", err)
 	}
-	// Serialize `DecreasePositionBps` param:
+	// Serialize `DecreasePositionBps`:
 	err = encoder.Encode(obj.DecreasePositionBps)
 	if err != nil {
 		return errors.NewField("DecreasePositionBps", err)
 	}
-	// Serialize `DovesOracle` param:
+	// Serialize `DovesOracle`:
 	err = encoder.Encode(obj.DovesOracle)
 	if err != nil {
 		return errors.NewField("DovesOracle", err)
 	}
-	// Serialize `MaxPositionSizeUsd` param:
+	// Serialize `MaxPositionSizeUsd`:
 	err = encoder.Encode(obj.MaxPositionSizeUsd)
 	if err != nil {
 		return errors.NewField("MaxPositionSizeUsd", err)
 	}
-	// Serialize `JumpRate` param:
+	// Serialize `JumpRate`:
 	err = encoder.Encode(obj.JumpRate)
 	if err != nil {
 		return errors.NewField("JumpRate", err)
 	}
-	// Serialize `PriceImpactFeeFactor` param:
+	// Serialize `PriceImpactFeeFactor`:
 	err = encoder.Encode(obj.PriceImpactFeeFactor)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeFactor", err)
 	}
-	// Serialize `PriceImpactExponent` param:
+	// Serialize `PriceImpactExponent`:
 	err = encoder.Encode(obj.PriceImpactExponent)
 	if err != nil {
 		return errors.NewField("PriceImpactExponent", err)
 	}
-	// Serialize `DeltaImbalanceThresholdDecimal` param:
+	// Serialize `DeltaImbalanceThresholdDecimal`:
 	err = encoder.Encode(obj.DeltaImbalanceThresholdDecimal)
 	if err != nil {
 		return errors.NewField("DeltaImbalanceThresholdDecimal", err)
 	}
-	// Serialize `MaxFeeBps` param:
+	// Serialize `MaxFeeBps`:
 	err = encoder.Encode(obj.MaxFeeBps)
 	if err != nil {
 		return errors.NewField("MaxFeeBps", err)
 	}
-	// Serialize `DovesAgOracle` param:
+	// Serialize `DovesAgOracle`:
 	err = encoder.Encode(obj.DovesAgOracle)
 	if err != nil {
 		return errors.NewField("DovesAgOracle", err)
@@ -2660,7 +2660,7 @@ type SetPerpetualsConfigParams struct {
 }
 
 func (obj SetPerpetualsConfigParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Permissions` param:
+	// Serialize `Permissions`:
 	err = encoder.Encode(obj.Permissions)
 	if err != nil {
 		return errors.NewField("Permissions", err)
@@ -2711,17 +2711,17 @@ type SetPoolConfigParams struct {
 }
 
 func (obj SetPoolConfigParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Fees` param:
+	// Serialize `Fees`:
 	err = encoder.Encode(obj.Fees)
 	if err != nil {
 		return errors.NewField("Fees", err)
 	}
-	// Serialize `Limit` param:
+	// Serialize `Limit`:
 	err = encoder.Encode(obj.Limit)
 	if err != nil {
 		return errors.NewField("Limit", err)
 	}
-	// Serialize `MaxRequestExecutionSec` param:
+	// Serialize `MaxRequestExecutionSec`:
 	err = encoder.Encode(obj.MaxRequestExecutionSec)
 	if err != nil {
 		return errors.NewField("MaxRequestExecutionSec", err)
@@ -2780,7 +2780,7 @@ type SetTestTimeParams struct {
 }
 
 func (obj SetTestTimeParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Time` param:
+	// Serialize `Time`:
 	err = encoder.Encode(obj.Time)
 	if err != nil {
 		return errors.NewField("Time", err)
@@ -2830,12 +2830,12 @@ type Swap2Params struct {
 }
 
 func (obj Swap2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `AmountIn` param:
+	// Serialize `AmountIn`:
 	err = encoder.Encode(obj.AmountIn)
 	if err != nil {
 		return errors.NewField("AmountIn", err)
 	}
-	// Serialize `MinAmountOut` param:
+	// Serialize `MinAmountOut`:
 	err = encoder.Encode(obj.MinAmountOut)
 	if err != nil {
 		return errors.NewField("MinAmountOut", err)
@@ -2895,37 +2895,37 @@ type TestInitParams struct {
 }
 
 func (obj TestInitParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `AllowSwap` param:
+	// Serialize `AllowSwap`:
 	err = encoder.Encode(obj.AllowSwap)
 	if err != nil {
 		return errors.NewField("AllowSwap", err)
 	}
-	// Serialize `AllowAddLiquidity` param:
+	// Serialize `AllowAddLiquidity`:
 	err = encoder.Encode(obj.AllowAddLiquidity)
 	if err != nil {
 		return errors.NewField("AllowAddLiquidity", err)
 	}
-	// Serialize `AllowRemoveLiquidity` param:
+	// Serialize `AllowRemoveLiquidity`:
 	err = encoder.Encode(obj.AllowRemoveLiquidity)
 	if err != nil {
 		return errors.NewField("AllowRemoveLiquidity", err)
 	}
-	// Serialize `AllowIncreasePosition` param:
+	// Serialize `AllowIncreasePosition`:
 	err = encoder.Encode(obj.AllowIncreasePosition)
 	if err != nil {
 		return errors.NewField("AllowIncreasePosition", err)
 	}
-	// Serialize `AllowDecreasePosition` param:
+	// Serialize `AllowDecreasePosition`:
 	err = encoder.Encode(obj.AllowDecreasePosition)
 	if err != nil {
 		return errors.NewField("AllowDecreasePosition", err)
 	}
-	// Serialize `AllowCollateralWithdrawal` param:
+	// Serialize `AllowCollateralWithdrawal`:
 	err = encoder.Encode(obj.AllowCollateralWithdrawal)
 	if err != nil {
 		return errors.NewField("AllowCollateralWithdrawal", err)
 	}
-	// Serialize `AllowLiquidatePosition` param:
+	// Serialize `AllowLiquidatePosition`:
 	err = encoder.Encode(obj.AllowLiquidatePosition)
 	if err != nil {
 		return errors.NewField("AllowLiquidatePosition", err)
@@ -3042,12 +3042,12 @@ type UpdateDecreasePositionRequest2Params struct {
 }
 
 func (obj UpdateDecreasePositionRequest2Params) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `TriggerPrice` param:
+	// Serialize `TriggerPrice`:
 	err = encoder.Encode(obj.TriggerPrice)
 	if err != nil {
 		return errors.NewField("TriggerPrice", err)
@@ -3143,32 +3143,32 @@ type PriceImpactBuffer struct {
 }
 
 func (obj PriceImpactBuffer) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `OpenInterest` param:
+	// Serialize `OpenInterest`:
 	err = encoder.Encode(obj.OpenInterest)
 	if err != nil {
 		return errors.NewField("OpenInterest", err)
 	}
-	// Serialize `LastUpdated` param:
+	// Serialize `LastUpdated`:
 	err = encoder.Encode(obj.LastUpdated)
 	if err != nil {
 		return errors.NewField("LastUpdated", err)
 	}
-	// Serialize `FeeFactor` param:
+	// Serialize `FeeFactor`:
 	err = encoder.Encode(obj.FeeFactor)
 	if err != nil {
 		return errors.NewField("FeeFactor", err)
 	}
-	// Serialize `Exponent` param:
+	// Serialize `Exponent`:
 	err = encoder.Encode(obj.Exponent)
 	if err != nil {
 		return errors.NewField("Exponent", err)
 	}
-	// Serialize `DeltaImbalanceThresholdDecimal` param:
+	// Serialize `DeltaImbalanceThresholdDecimal`:
 	err = encoder.Encode(obj.DeltaImbalanceThresholdDecimal)
 	if err != nil {
 		return errors.NewField("DeltaImbalanceThresholdDecimal", err)
 	}
-	// Serialize `MaxFeeBps` param:
+	// Serialize `MaxFeeBps`:
 	err = encoder.Encode(obj.MaxFeeBps)
 	if err != nil {
 		return errors.NewField("MaxFeeBps", err)
@@ -3247,32 +3247,32 @@ type Assets struct {
 }
 
 func (obj Assets) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `FeesReserves` param:
+	// Serialize `FeesReserves`:
 	err = encoder.Encode(obj.FeesReserves)
 	if err != nil {
 		return errors.NewField("FeesReserves", err)
 	}
-	// Serialize `Owned` param:
+	// Serialize `Owned`:
 	err = encoder.Encode(obj.Owned)
 	if err != nil {
 		return errors.NewField("Owned", err)
 	}
-	// Serialize `Locked` param:
+	// Serialize `Locked`:
 	err = encoder.Encode(obj.Locked)
 	if err != nil {
 		return errors.NewField("Locked", err)
 	}
-	// Serialize `GuaranteedUsd` param:
+	// Serialize `GuaranteedUsd`:
 	err = encoder.Encode(obj.GuaranteedUsd)
 	if err != nil {
 		return errors.NewField("GuaranteedUsd", err)
 	}
-	// Serialize `GlobalShortSizes` param:
+	// Serialize `GlobalShortSizes`:
 	err = encoder.Encode(obj.GlobalShortSizes)
 	if err != nil {
 		return errors.NewField("GlobalShortSizes", err)
 	}
-	// Serialize `GlobalShortAveragePrices` param:
+	// Serialize `GlobalShortAveragePrices`:
 	err = encoder.Encode(obj.GlobalShortAveragePrices)
 	if err != nil {
 		return errors.NewField("GlobalShortAveragePrices", err)
@@ -3351,32 +3351,32 @@ type PricingParams struct {
 }
 
 func (obj PricingParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `TradeImpactFeeScalar` param:
+	// Serialize `TradeImpactFeeScalar`:
 	err = encoder.Encode(obj.TradeImpactFeeScalar)
 	if err != nil {
 		return errors.NewField("TradeImpactFeeScalar", err)
 	}
-	// Serialize `Buffer` param:
+	// Serialize `Buffer`:
 	err = encoder.Encode(obj.Buffer)
 	if err != nil {
 		return errors.NewField("Buffer", err)
 	}
-	// Serialize `SwapSpread` param:
+	// Serialize `SwapSpread`:
 	err = encoder.Encode(obj.SwapSpread)
 	if err != nil {
 		return errors.NewField("SwapSpread", err)
 	}
-	// Serialize `MaxLeverage` param:
+	// Serialize `MaxLeverage`:
 	err = encoder.Encode(obj.MaxLeverage)
 	if err != nil {
 		return errors.NewField("MaxLeverage", err)
 	}
-	// Serialize `MaxGlobalLongSizes` param:
+	// Serialize `MaxGlobalLongSizes`:
 	err = encoder.Encode(obj.MaxGlobalLongSizes)
 	if err != nil {
 		return errors.NewField("MaxGlobalLongSizes", err)
 	}
-	// Serialize `MaxGlobalShortSizes` param:
+	// Serialize `MaxGlobalShortSizes`:
 	err = encoder.Encode(obj.MaxGlobalShortSizes)
 	if err != nil {
 		return errors.NewField("MaxGlobalShortSizes", err)
@@ -3452,17 +3452,17 @@ type FundingRateState struct {
 }
 
 func (obj FundingRateState) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `CumulativeInterestRate` param:
+	// Serialize `CumulativeInterestRate`:
 	err = encoder.Encode(obj.CumulativeInterestRate)
 	if err != nil {
 		return errors.NewField("CumulativeInterestRate", err)
 	}
-	// Serialize `LastUpdate` param:
+	// Serialize `LastUpdate`:
 	err = encoder.Encode(obj.LastUpdate)
 	if err != nil {
 		return errors.NewField("LastUpdate", err)
 	}
-	// Serialize `HourlyFundingDbps` param:
+	// Serialize `HourlyFundingDbps`:
 	err = encoder.Encode(obj.HourlyFundingDbps)
 	if err != nil {
 		return errors.NewField("HourlyFundingDbps", err)
@@ -3524,22 +3524,22 @@ type JumpRateState struct {
 }
 
 func (obj JumpRateState) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `MinRateBps` param:
+	// Serialize `MinRateBps`:
 	err = encoder.Encode(obj.MinRateBps)
 	if err != nil {
 		return errors.NewField("MinRateBps", err)
 	}
-	// Serialize `MaxRateBps` param:
+	// Serialize `MaxRateBps`:
 	err = encoder.Encode(obj.MaxRateBps)
 	if err != nil {
 		return errors.NewField("MaxRateBps", err)
 	}
-	// Serialize `TargetRateBps` param:
+	// Serialize `TargetRateBps`:
 	err = encoder.Encode(obj.TargetRateBps)
 	if err != nil {
 		return errors.NewField("TargetRateBps", err)
 	}
-	// Serialize `TargetUtilizationRate` param:
+	// Serialize `TargetUtilizationRate`:
 	err = encoder.Encode(obj.TargetUtilizationRate)
 	if err != nil {
 		return errors.NewField("TargetUtilizationRate", err)
@@ -3604,12 +3604,12 @@ type OraclePrice struct {
 }
 
 func (obj OraclePrice) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `Exponent` param:
+	// Serialize `Exponent`:
 	err = encoder.Encode(obj.Exponent)
 	if err != nil {
 		return errors.NewField("Exponent", err)
@@ -3665,17 +3665,17 @@ type Price struct {
 }
 
 func (obj Price) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `Expo` param:
+	// Serialize `Expo`:
 	err = encoder.Encode(obj.Expo)
 	if err != nil {
 		return errors.NewField("Expo", err)
 	}
-	// Serialize `PublishTime` param:
+	// Serialize `PublishTime`:
 	err = encoder.Encode(obj.PublishTime)
 	if err != nil {
 		return errors.NewField("PublishTime", err)
@@ -3737,22 +3737,22 @@ type OracleParams struct {
 }
 
 func (obj OracleParams) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `OracleAccount` param:
+	// Serialize `OracleAccount`:
 	err = encoder.Encode(obj.OracleAccount)
 	if err != nil {
 		return errors.NewField("OracleAccount", err)
 	}
-	// Serialize `OracleType` param:
+	// Serialize `OracleType`:
 	err = encoder.Encode(obj.OracleType)
 	if err != nil {
 		return errors.NewField("OracleType", err)
 	}
-	// Serialize `Buffer` param:
+	// Serialize `Buffer`:
 	err = encoder.Encode(obj.Buffer)
 	if err != nil {
 		return errors.NewField("Buffer", err)
 	}
-	// Serialize `MaxPriceAgeSec` param:
+	// Serialize `MaxPriceAgeSec`:
 	err = encoder.Encode(obj.MaxPriceAgeSec)
 	if err != nil {
 		return errors.NewField("MaxPriceAgeSec", err)
@@ -3818,17 +3818,17 @@ type AmountAndFee struct {
 }
 
 func (obj AmountAndFee) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Amount` param:
+	// Serialize `Amount`:
 	err = encoder.Encode(obj.Amount)
 	if err != nil {
 		return errors.NewField("Amount", err)
 	}
-	// Serialize `Fee` param:
+	// Serialize `Fee`:
 	err = encoder.Encode(obj.Fee)
 	if err != nil {
 		return errors.NewField("Fee", err)
 	}
-	// Serialize `FeeBps` param:
+	// Serialize `FeeBps`:
 	err = encoder.Encode(obj.FeeBps)
 	if err != nil {
 		return errors.NewField("FeeBps", err)
@@ -3893,37 +3893,37 @@ type Permissions struct {
 }
 
 func (obj Permissions) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `AllowSwap` param:
+	// Serialize `AllowSwap`:
 	err = encoder.Encode(obj.AllowSwap)
 	if err != nil {
 		return errors.NewField("AllowSwap", err)
 	}
-	// Serialize `AllowAddLiquidity` param:
+	// Serialize `AllowAddLiquidity`:
 	err = encoder.Encode(obj.AllowAddLiquidity)
 	if err != nil {
 		return errors.NewField("AllowAddLiquidity", err)
 	}
-	// Serialize `AllowRemoveLiquidity` param:
+	// Serialize `AllowRemoveLiquidity`:
 	err = encoder.Encode(obj.AllowRemoveLiquidity)
 	if err != nil {
 		return errors.NewField("AllowRemoveLiquidity", err)
 	}
-	// Serialize `AllowIncreasePosition` param:
+	// Serialize `AllowIncreasePosition`:
 	err = encoder.Encode(obj.AllowIncreasePosition)
 	if err != nil {
 		return errors.NewField("AllowIncreasePosition", err)
 	}
-	// Serialize `AllowDecreasePosition` param:
+	// Serialize `AllowDecreasePosition`:
 	err = encoder.Encode(obj.AllowDecreasePosition)
 	if err != nil {
 		return errors.NewField("AllowDecreasePosition", err)
 	}
-	// Serialize `AllowCollateralWithdrawal` param:
+	// Serialize `AllowCollateralWithdrawal`:
 	err = encoder.Encode(obj.AllowCollateralWithdrawal)
 	if err != nil {
 		return errors.NewField("AllowCollateralWithdrawal", err)
 	}
-	// Serialize `AllowLiquidatePosition` param:
+	// Serialize `AllowLiquidatePosition`:
 	err = encoder.Encode(obj.AllowLiquidatePosition)
 	if err != nil {
 		return errors.NewField("AllowLiquidatePosition", err)
@@ -4010,47 +4010,47 @@ type Fees struct {
 }
 
 func (obj Fees) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `SwapMultiplier` param:
+	// Serialize `SwapMultiplier`:
 	err = encoder.Encode(obj.SwapMultiplier)
 	if err != nil {
 		return errors.NewField("SwapMultiplier", err)
 	}
-	// Serialize `StableSwapMultiplier` param:
+	// Serialize `StableSwapMultiplier`:
 	err = encoder.Encode(obj.StableSwapMultiplier)
 	if err != nil {
 		return errors.NewField("StableSwapMultiplier", err)
 	}
-	// Serialize `AddRemoveLiquidityBps` param:
+	// Serialize `AddRemoveLiquidityBps`:
 	err = encoder.Encode(obj.AddRemoveLiquidityBps)
 	if err != nil {
 		return errors.NewField("AddRemoveLiquidityBps", err)
 	}
-	// Serialize `SwapBps` param:
+	// Serialize `SwapBps`:
 	err = encoder.Encode(obj.SwapBps)
 	if err != nil {
 		return errors.NewField("SwapBps", err)
 	}
-	// Serialize `TaxBps` param:
+	// Serialize `TaxBps`:
 	err = encoder.Encode(obj.TaxBps)
 	if err != nil {
 		return errors.NewField("TaxBps", err)
 	}
-	// Serialize `StableSwapBps` param:
+	// Serialize `StableSwapBps`:
 	err = encoder.Encode(obj.StableSwapBps)
 	if err != nil {
 		return errors.NewField("StableSwapBps", err)
 	}
-	// Serialize `StableSwapTaxBps` param:
+	// Serialize `StableSwapTaxBps`:
 	err = encoder.Encode(obj.StableSwapTaxBps)
 	if err != nil {
 		return errors.NewField("StableSwapTaxBps", err)
 	}
-	// Serialize `LiquidationRewardBps` param:
+	// Serialize `LiquidationRewardBps`:
 	err = encoder.Encode(obj.LiquidationRewardBps)
 	if err != nil {
 		return errors.NewField("LiquidationRewardBps", err)
 	}
-	// Serialize `ProtocolShareBps` param:
+	// Serialize `ProtocolShareBps`:
 	err = encoder.Encode(obj.ProtocolShareBps)
 	if err != nil {
 		return errors.NewField("ProtocolShareBps", err)
@@ -4141,17 +4141,17 @@ type PoolApr struct {
 }
 
 func (obj PoolApr) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `LastUpdated` param:
+	// Serialize `LastUpdated`:
 	err = encoder.Encode(obj.LastUpdated)
 	if err != nil {
 		return errors.NewField("LastUpdated", err)
 	}
-	// Serialize `FeeAprBps` param:
+	// Serialize `FeeAprBps`:
 	err = encoder.Encode(obj.FeeAprBps)
 	if err != nil {
 		return errors.NewField("FeeAprBps", err)
 	}
-	// Serialize `RealizedFeeUsd` param:
+	// Serialize `RealizedFeeUsd`:
 	err = encoder.Encode(obj.RealizedFeeUsd)
 	if err != nil {
 		return errors.NewField("RealizedFeeUsd", err)
@@ -4212,17 +4212,17 @@ type Limit struct {
 }
 
 func (obj Limit) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `MaxAumUsd` param:
+	// Serialize `MaxAumUsd`:
 	err = encoder.Encode(obj.MaxAumUsd)
 	if err != nil {
 		return errors.NewField("MaxAumUsd", err)
 	}
-	// Serialize `TokenWeightageBufferBps` param:
+	// Serialize `TokenWeightageBufferBps`:
 	err = encoder.Encode(obj.TokenWeightageBufferBps)
 	if err != nil {
 		return errors.NewField("TokenWeightageBufferBps", err)
 	}
-	// Serialize `Buffer` param:
+	// Serialize `Buffer`:
 	err = encoder.Encode(obj.Buffer)
 	if err != nil {
 		return errors.NewField("Buffer", err)
@@ -4456,102 +4456,102 @@ type Custody struct {
 }
 
 func (obj Custody) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `Mint` param:
+	// Serialize `Mint`:
 	err = encoder.Encode(obj.Mint)
 	if err != nil {
 		return errors.NewField("Mint", err)
 	}
-	// Serialize `TokenAccount` param:
+	// Serialize `TokenAccount`:
 	err = encoder.Encode(obj.TokenAccount)
 	if err != nil {
 		return errors.NewField("TokenAccount", err)
 	}
-	// Serialize `Decimals` param:
+	// Serialize `Decimals`:
 	err = encoder.Encode(obj.Decimals)
 	if err != nil {
 		return errors.NewField("Decimals", err)
 	}
-	// Serialize `IsStable` param:
+	// Serialize `IsStable`:
 	err = encoder.Encode(obj.IsStable)
 	if err != nil {
 		return errors.NewField("IsStable", err)
 	}
-	// Serialize `Oracle` param:
+	// Serialize `Oracle`:
 	err = encoder.Encode(obj.Oracle)
 	if err != nil {
 		return errors.NewField("Oracle", err)
 	}
-	// Serialize `Pricing` param:
+	// Serialize `Pricing`:
 	err = encoder.Encode(obj.Pricing)
 	if err != nil {
 		return errors.NewField("Pricing", err)
 	}
-	// Serialize `Permissions` param:
+	// Serialize `Permissions`:
 	err = encoder.Encode(obj.Permissions)
 	if err != nil {
 		return errors.NewField("Permissions", err)
 	}
-	// Serialize `TargetRatioBps` param:
+	// Serialize `TargetRatioBps`:
 	err = encoder.Encode(obj.TargetRatioBps)
 	if err != nil {
 		return errors.NewField("TargetRatioBps", err)
 	}
-	// Serialize `Assets` param:
+	// Serialize `Assets`:
 	err = encoder.Encode(obj.Assets)
 	if err != nil {
 		return errors.NewField("Assets", err)
 	}
-	// Serialize `FundingRateState` param:
+	// Serialize `FundingRateState`:
 	err = encoder.Encode(obj.FundingRateState)
 	if err != nil {
 		return errors.NewField("FundingRateState", err)
 	}
-	// Serialize `Bump` param:
+	// Serialize `Bump`:
 	err = encoder.Encode(obj.Bump)
 	if err != nil {
 		return errors.NewField("Bump", err)
 	}
-	// Serialize `TokenAccountBump` param:
+	// Serialize `TokenAccountBump`:
 	err = encoder.Encode(obj.TokenAccountBump)
 	if err != nil {
 		return errors.NewField("TokenAccountBump", err)
 	}
-	// Serialize `IncreasePositionBps` param:
+	// Serialize `IncreasePositionBps`:
 	err = encoder.Encode(obj.IncreasePositionBps)
 	if err != nil {
 		return errors.NewField("IncreasePositionBps", err)
 	}
-	// Serialize `DecreasePositionBps` param:
+	// Serialize `DecreasePositionBps`:
 	err = encoder.Encode(obj.DecreasePositionBps)
 	if err != nil {
 		return errors.NewField("DecreasePositionBps", err)
 	}
-	// Serialize `MaxPositionSizeUsd` param:
+	// Serialize `MaxPositionSizeUsd`:
 	err = encoder.Encode(obj.MaxPositionSizeUsd)
 	if err != nil {
 		return errors.NewField("MaxPositionSizeUsd", err)
 	}
-	// Serialize `DovesOracle` param:
+	// Serialize `DovesOracle`:
 	err = encoder.Encode(obj.DovesOracle)
 	if err != nil {
 		return errors.NewField("DovesOracle", err)
 	}
-	// Serialize `JumpRateState` param:
+	// Serialize `JumpRateState`:
 	err = encoder.Encode(obj.JumpRateState)
 	if err != nil {
 		return errors.NewField("JumpRateState", err)
 	}
-	// Serialize `DovesAgOracle` param:
+	// Serialize `DovesAgOracle`:
 	err = encoder.Encode(obj.DovesAgOracle)
 	if err != nil {
 		return errors.NewField("DovesAgOracle", err)
 	}
-	// Serialize `PriceImpactBuffer` param:
+	// Serialize `PriceImpactBuffer`:
 	err = encoder.Encode(obj.PriceImpactBuffer)
 	if err != nil {
 		return errors.NewField("PriceImpactBuffer", err)
@@ -4700,32 +4700,32 @@ type Perpetuals struct {
 }
 
 func (obj Perpetuals) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Permissions` param:
+	// Serialize `Permissions`:
 	err = encoder.Encode(obj.Permissions)
 	if err != nil {
 		return errors.NewField("Permissions", err)
 	}
-	// Serialize `Pools` param:
+	// Serialize `Pools`:
 	err = encoder.Encode(obj.Pools)
 	if err != nil {
 		return errors.NewField("Pools", err)
 	}
-	// Serialize `Admin` param:
+	// Serialize `Admin`:
 	err = encoder.Encode(obj.Admin)
 	if err != nil {
 		return errors.NewField("Admin", err)
 	}
-	// Serialize `TransferAuthorityBump` param:
+	// Serialize `TransferAuthorityBump`:
 	err = encoder.Encode(obj.TransferAuthorityBump)
 	if err != nil {
 		return errors.NewField("TransferAuthorityBump", err)
 	}
-	// Serialize `PerpetualsBump` param:
+	// Serialize `PerpetualsBump`:
 	err = encoder.Encode(obj.PerpetualsBump)
 	if err != nil {
 		return errors.NewField("PerpetualsBump", err)
 	}
-	// Serialize `InceptionTime` param:
+	// Serialize `InceptionTime`:
 	err = encoder.Encode(obj.InceptionTime)
 	if err != nil {
 		return errors.NewField("InceptionTime", err)
@@ -4808,52 +4808,52 @@ type Pool struct {
 }
 
 func (obj Pool) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Name` param:
+	// Serialize `Name`:
 	err = encoder.Encode(obj.Name)
 	if err != nil {
 		return errors.NewField("Name", err)
 	}
-	// Serialize `Custodies` param:
+	// Serialize `Custodies`:
 	err = encoder.Encode(obj.Custodies)
 	if err != nil {
 		return errors.NewField("Custodies", err)
 	}
-	// Serialize `AumUsd` param:
+	// Serialize `AumUsd`:
 	err = encoder.Encode(obj.AumUsd)
 	if err != nil {
 		return errors.NewField("AumUsd", err)
 	}
-	// Serialize `Limit` param:
+	// Serialize `Limit`:
 	err = encoder.Encode(obj.Limit)
 	if err != nil {
 		return errors.NewField("Limit", err)
 	}
-	// Serialize `Fees` param:
+	// Serialize `Fees`:
 	err = encoder.Encode(obj.Fees)
 	if err != nil {
 		return errors.NewField("Fees", err)
 	}
-	// Serialize `PoolApr` param:
+	// Serialize `PoolApr`:
 	err = encoder.Encode(obj.PoolApr)
 	if err != nil {
 		return errors.NewField("PoolApr", err)
 	}
-	// Serialize `MaxRequestExecutionSec` param:
+	// Serialize `MaxRequestExecutionSec`:
 	err = encoder.Encode(obj.MaxRequestExecutionSec)
 	if err != nil {
 		return errors.NewField("MaxRequestExecutionSec", err)
 	}
-	// Serialize `Bump` param:
+	// Serialize `Bump`:
 	err = encoder.Encode(obj.Bump)
 	if err != nil {
 		return errors.NewField("Bump", err)
 	}
-	// Serialize `LpTokenBump` param:
+	// Serialize `LpTokenBump`:
 	err = encoder.Encode(obj.LpTokenBump)
 	if err != nil {
 		return errors.NewField("LpTokenBump", err)
 	}
-	// Serialize `InceptionTime` param:
+	// Serialize `InceptionTime`:
 	err = encoder.Encode(obj.InceptionTime)
 	if err != nil {
 		return errors.NewField("InceptionTime", err)
@@ -4968,67 +4968,67 @@ type PositionRequest struct {
 }
 
 func (obj PositionRequest) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `Custody` param:
+	// Serialize `Custody`:
 	err = encoder.Encode(obj.Custody)
 	if err != nil {
 		return errors.NewField("Custody", err)
 	}
-	// Serialize `Position` param:
+	// Serialize `Position`:
 	err = encoder.Encode(obj.Position)
 	if err != nil {
 		return errors.NewField("Position", err)
 	}
-	// Serialize `Mint` param:
+	// Serialize `Mint`:
 	err = encoder.Encode(obj.Mint)
 	if err != nil {
 		return errors.NewField("Mint", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `UpdateTime` param:
+	// Serialize `UpdateTime`:
 	err = encoder.Encode(obj.UpdateTime)
 	if err != nil {
 		return errors.NewField("UpdateTime", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralDelta` param:
+	// Serialize `CollateralDelta`:
 	err = encoder.Encode(obj.CollateralDelta)
 	if err != nil {
 		return errors.NewField("CollateralDelta", err)
 	}
-	// Serialize `RequestChange` param:
+	// Serialize `RequestChange`:
 	err = encoder.Encode(obj.RequestChange)
 	if err != nil {
 		return errors.NewField("RequestChange", err)
 	}
-	// Serialize `RequestType` param:
+	// Serialize `RequestType`:
 	err = encoder.Encode(obj.RequestType)
 	if err != nil {
 		return errors.NewField("RequestType", err)
 	}
-	// Serialize `Side` param:
+	// Serialize `Side`:
 	err = encoder.Encode(obj.Side)
 	if err != nil {
 		return errors.NewField("Side", err)
 	}
-	// Serialize `PriceSlippage` param (optional):
+	// Serialize `PriceSlippage` (optional):
 	{
 		if obj.PriceSlippage == nil {
 			err = encoder.WriteOption(false)
@@ -5046,7 +5046,7 @@ func (obj PositionRequest) MarshalWithEncoder(encoder *binary.Encoder) (err erro
 			}
 		}
 	}
-	// Serialize `JupiterMinimumOut` param (optional):
+	// Serialize `JupiterMinimumOut` (optional):
 	{
 		if obj.JupiterMinimumOut == nil {
 			err = encoder.WriteOption(false)
@@ -5064,7 +5064,7 @@ func (obj PositionRequest) MarshalWithEncoder(encoder *binary.Encoder) (err erro
 			}
 		}
 	}
-	// Serialize `PreSwapAmount` param (optional):
+	// Serialize `PreSwapAmount` (optional):
 	{
 		if obj.PreSwapAmount == nil {
 			err = encoder.WriteOption(false)
@@ -5082,7 +5082,7 @@ func (obj PositionRequest) MarshalWithEncoder(encoder *binary.Encoder) (err erro
 			}
 		}
 	}
-	// Serialize `TriggerPrice` param (optional):
+	// Serialize `TriggerPrice` (optional):
 	{
 		if obj.TriggerPrice == nil {
 			err = encoder.WriteOption(false)
@@ -5100,7 +5100,7 @@ func (obj PositionRequest) MarshalWithEncoder(encoder *binary.Encoder) (err erro
 			}
 		}
 	}
-	// Serialize `TriggerAboveThreshold` param (optional):
+	// Serialize `TriggerAboveThreshold` (optional):
 	{
 		if obj.TriggerAboveThreshold == nil {
 			err = encoder.WriteOption(false)
@@ -5118,7 +5118,7 @@ func (obj PositionRequest) MarshalWithEncoder(encoder *binary.Encoder) (err erro
 			}
 		}
 	}
-	// Serialize `EntirePosition` param (optional):
+	// Serialize `EntirePosition` (optional):
 	{
 		if obj.EntirePosition == nil {
 			err = encoder.WriteOption(false)
@@ -5136,22 +5136,22 @@ func (obj PositionRequest) MarshalWithEncoder(encoder *binary.Encoder) (err erro
 			}
 		}
 	}
-	// Serialize `Executed` param:
+	// Serialize `Executed`:
 	err = encoder.Encode(obj.Executed)
 	if err != nil {
 		return errors.NewField("Executed", err)
 	}
-	// Serialize `Counter` param:
+	// Serialize `Counter`:
 	err = encoder.Encode(obj.Counter)
 	if err != nil {
 		return errors.NewField("Counter", err)
 	}
-	// Serialize `Bump` param:
+	// Serialize `Bump`:
 	err = encoder.Encode(obj.Bump)
 	if err != nil {
 		return errors.NewField("Bump", err)
 	}
-	// Serialize `Referral` param (optional):
+	// Serialize `Referral` (optional):
 	{
 		if obj.Referral == nil {
 			err = encoder.WriteOption(false)
@@ -5387,72 +5387,72 @@ type Position struct {
 }
 
 func (obj Position) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `Custody` param:
+	// Serialize `Custody`:
 	err = encoder.Encode(obj.Custody)
 	if err != nil {
 		return errors.NewField("Custody", err)
 	}
-	// Serialize `CollateralCustody` param:
+	// Serialize `CollateralCustody`:
 	err = encoder.Encode(obj.CollateralCustody)
 	if err != nil {
 		return errors.NewField("CollateralCustody", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `UpdateTime` param:
+	// Serialize `UpdateTime`:
 	err = encoder.Encode(obj.UpdateTime)
 	if err != nil {
 		return errors.NewField("UpdateTime", err)
 	}
-	// Serialize `Side` param:
+	// Serialize `Side`:
 	err = encoder.Encode(obj.Side)
 	if err != nil {
 		return errors.NewField("Side", err)
 	}
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `SizeUsd` param:
+	// Serialize `SizeUsd`:
 	err = encoder.Encode(obj.SizeUsd)
 	if err != nil {
 		return errors.NewField("SizeUsd", err)
 	}
-	// Serialize `CollateralUsd` param:
+	// Serialize `CollateralUsd`:
 	err = encoder.Encode(obj.CollateralUsd)
 	if err != nil {
 		return errors.NewField("CollateralUsd", err)
 	}
-	// Serialize `RealisedPnlUsd` param:
+	// Serialize `RealisedPnlUsd`:
 	err = encoder.Encode(obj.RealisedPnlUsd)
 	if err != nil {
 		return errors.NewField("RealisedPnlUsd", err)
 	}
-	// Serialize `CumulativeInterestSnapshot` param:
+	// Serialize `CumulativeInterestSnapshot`:
 	err = encoder.Encode(obj.CumulativeInterestSnapshot)
 	if err != nil {
 		return errors.NewField("CumulativeInterestSnapshot", err)
 	}
-	// Serialize `LockedAmount` param:
+	// Serialize `LockedAmount`:
 	err = encoder.Encode(obj.LockedAmount)
 	if err != nil {
 		return errors.NewField("LockedAmount", err)
 	}
-	// Serialize `Bump` param:
+	// Serialize `Bump`:
 	err = encoder.Encode(obj.Bump)
 	if err != nil {
 		return errors.NewField("Bump", err)
@@ -5567,12 +5567,12 @@ type TokenLedger struct {
 }
 
 func (obj TokenLedger) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `TokenAccount` param:
+	// Serialize `TokenAccount`:
 	err = encoder.Encode(obj.TokenAccount)
 	if err != nil {
 		return errors.NewField("TokenAccount", err)
 	}
-	// Serialize `Amount` param:
+	// Serialize `Amount`:
 	err = encoder.Encode(obj.Amount)
 	if err != nil {
 		return errors.NewField("Amount", err)
@@ -5643,67 +5643,67 @@ type CreatePositionRequestEvent struct {
 }
 
 func (obj CreatePositionRequestEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralMint` param:
+	// Serialize `PositionCollateralMint`:
 	err = encoder.Encode(obj.PositionCollateralMint)
 	if err != nil {
 		return errors.NewField("PositionCollateralMint", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `PositionRequestMint` param:
+	// Serialize `PositionRequestMint`:
 	err = encoder.Encode(obj.PositionRequestMint)
 	if err != nil {
 		return errors.NewField("PositionRequestMint", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralDelta` param:
+	// Serialize `CollateralDelta`:
 	err = encoder.Encode(obj.CollateralDelta)
 	if err != nil {
 		return errors.NewField("CollateralDelta", err)
 	}
-	// Serialize `PriceSlippage` param (optional):
+	// Serialize `PriceSlippage` (optional):
 	{
 		if obj.PriceSlippage == nil {
 			err = encoder.WriteOption(false)
@@ -5721,7 +5721,7 @@ func (obj CreatePositionRequestEvent) MarshalWithEncoder(encoder *binary.Encoder
 			}
 		}
 	}
-	// Serialize `JupiterMinimumOut` param (optional):
+	// Serialize `JupiterMinimumOut` (optional):
 	{
 		if obj.JupiterMinimumOut == nil {
 			err = encoder.WriteOption(false)
@@ -5739,7 +5739,7 @@ func (obj CreatePositionRequestEvent) MarshalWithEncoder(encoder *binary.Encoder
 			}
 		}
 	}
-	// Serialize `PreSwapAmount` param (optional):
+	// Serialize `PreSwapAmount` (optional):
 	{
 		if obj.PreSwapAmount == nil {
 			err = encoder.WriteOption(false)
@@ -5757,17 +5757,17 @@ func (obj CreatePositionRequestEvent) MarshalWithEncoder(encoder *binary.Encoder
 			}
 		}
 	}
-	// Serialize `RequestChange` param:
+	// Serialize `RequestChange`:
 	err = encoder.Encode(obj.RequestChange)
 	if err != nil {
 		return errors.NewField("RequestChange", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `Referral` param (optional):
+	// Serialize `Referral` (optional):
 	{
 		if obj.Referral == nil {
 			err = encoder.WriteOption(false)
@@ -5958,67 +5958,67 @@ type InstantCreateTpslEvent struct {
 }
 
 func (obj InstantCreateTpslEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `PositionRequestMint` param:
+	// Serialize `PositionRequestMint`:
 	err = encoder.Encode(obj.PositionRequestMint)
 	if err != nil {
 		return errors.NewField("PositionRequestMint", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralDelta` param:
+	// Serialize `CollateralDelta`:
 	err = encoder.Encode(obj.CollateralDelta)
 	if err != nil {
 		return errors.NewField("CollateralDelta", err)
 	}
-	// Serialize `EntirePosition` param:
+	// Serialize `EntirePosition`:
 	err = encoder.Encode(obj.EntirePosition)
 	if err != nil {
 		return errors.NewField("EntirePosition", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
@@ -6139,67 +6139,67 @@ type InstantUpdateTpslEvent struct {
 }
 
 func (obj InstantUpdateTpslEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `PositionRequestMint` param:
+	// Serialize `PositionRequestMint`:
 	err = encoder.Encode(obj.PositionRequestMint)
 	if err != nil {
 		return errors.NewField("PositionRequestMint", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralDelta` param:
+	// Serialize `CollateralDelta`:
 	err = encoder.Encode(obj.CollateralDelta)
 	if err != nil {
 		return errors.NewField("CollateralDelta", err)
 	}
-	// Serialize `EntirePosition` param:
+	// Serialize `EntirePosition`:
 	err = encoder.Encode(obj.EntirePosition)
 	if err != nil {
 		return errors.NewField("EntirePosition", err)
 	}
-	// Serialize `UpdateTime` param:
+	// Serialize `UpdateTime`:
 	err = encoder.Encode(obj.UpdateTime)
 	if err != nil {
 		return errors.NewField("UpdateTime", err)
@@ -6316,7 +6316,7 @@ type ClosePositionRequestEvent struct {
 }
 
 func (obj ClosePositionRequestEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `EntirePosition` param (optional):
+	// Serialize `EntirePosition` (optional):
 	{
 		if obj.EntirePosition == nil {
 			err = encoder.WriteOption(false)
@@ -6334,42 +6334,42 @@ func (obj ClosePositionRequestEvent) MarshalWithEncoder(encoder *binary.Encoder)
 			}
 		}
 	}
-	// Serialize `Executed` param:
+	// Serialize `Executed`:
 	err = encoder.Encode(obj.Executed)
 	if err != nil {
 		return errors.NewField("Executed", err)
 	}
-	// Serialize `RequestChange` param:
+	// Serialize `RequestChange`:
 	err = encoder.Encode(obj.RequestChange)
 	if err != nil {
 		return errors.NewField("RequestChange", err)
 	}
-	// Serialize `RequestType` param:
+	// Serialize `RequestType`:
 	err = encoder.Encode(obj.RequestType)
 	if err != nil {
 		return errors.NewField("RequestType", err)
 	}
-	// Serialize `Side` param:
+	// Serialize `Side`:
 	err = encoder.Encode(obj.Side)
 	if err != nil {
 		return errors.NewField("Side", err)
 	}
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Mint` param:
+	// Serialize `Mint`:
 	err = encoder.Encode(obj.Mint)
 	if err != nil {
 		return errors.NewField("Mint", err)
 	}
-	// Serialize `Amount` param:
+	// Serialize `Amount`:
 	err = encoder.Encode(obj.Amount)
 	if err != nil {
 		return errors.NewField("Amount", err)
@@ -6490,92 +6490,92 @@ type IncreasePositionEvent struct {
 }
 
 func (obj IncreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionSizeUsd` param:
+	// Serialize `PositionSizeUsd`:
 	err = encoder.Encode(obj.PositionSizeUsd)
 	if err != nil {
 		return errors.NewField("PositionSizeUsd", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `PositionRequestMint` param:
+	// Serialize `PositionRequestMint`:
 	err = encoder.Encode(obj.PositionRequestMint)
 	if err != nil {
 		return errors.NewField("PositionRequestMint", err)
 	}
-	// Serialize `PositionRequestChange` param:
+	// Serialize `PositionRequestChange`:
 	err = encoder.Encode(obj.PositionRequestChange)
 	if err != nil {
 		return errors.NewField("PositionRequestChange", err)
 	}
-	// Serialize `PositionRequestType` param:
+	// Serialize `PositionRequestType`:
 	err = encoder.Encode(obj.PositionRequestType)
 	if err != nil {
 		return errors.NewField("PositionRequestType", err)
 	}
-	// Serialize `PositionRequestCollateralDelta` param:
+	// Serialize `PositionRequestCollateralDelta`:
 	err = encoder.Encode(obj.PositionRequestCollateralDelta)
 	if err != nil {
 		return errors.NewField("PositionRequestCollateralDelta", err)
 	}
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralUsdDelta` param:
+	// Serialize `CollateralUsdDelta`:
 	err = encoder.Encode(obj.CollateralUsdDelta)
 	if err != nil {
 		return errors.NewField("CollateralUsdDelta", err)
 	}
-	// Serialize `CollateralTokenDelta` param:
+	// Serialize `CollateralTokenDelta`:
 	err = encoder.Encode(obj.CollateralTokenDelta)
 	if err != nil {
 		return errors.NewField("CollateralTokenDelta", err)
 	}
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `PriceSlippage` param (optional):
+	// Serialize `PriceSlippage` (optional):
 	{
 		if obj.PriceSlippage == nil {
 			err = encoder.WriteOption(false)
@@ -6593,22 +6593,22 @@ func (obj IncreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (er
 			}
 		}
 	}
-	// Serialize `FeeToken` param:
+	// Serialize `FeeToken`:
 	err = encoder.Encode(obj.FeeToken)
 	if err != nil {
 		return errors.NewField("FeeToken", err)
 	}
-	// Serialize `FeeUsd` param:
+	// Serialize `FeeUsd`:
 	err = encoder.Encode(obj.FeeUsd)
 	if err != nil {
 		return errors.NewField("FeeUsd", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `Referral` param (optional):
+	// Serialize `Referral` (optional):
 	{
 		if obj.Referral == nil {
 			err = encoder.WriteOption(false)
@@ -6626,17 +6626,17 @@ func (obj IncreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (er
 			}
 		}
 	}
-	// Serialize `PositionFeeUsd` param:
+	// Serialize `PositionFeeUsd`:
 	err = encoder.Encode(obj.PositionFeeUsd)
 	if err != nil {
 		return errors.NewField("PositionFeeUsd", err)
 	}
-	// Serialize `FundingFeeUsd` param:
+	// Serialize `FundingFeeUsd`:
 	err = encoder.Encode(obj.FundingFeeUsd)
 	if err != nil {
 		return errors.NewField("FundingFeeUsd", err)
 	}
-	// Serialize `PriceImpactFeeUsd` param:
+	// Serialize `PriceImpactFeeUsd`:
 	err = encoder.Encode(obj.PriceImpactFeeUsd)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeUsd", err)
@@ -6823,17 +6823,17 @@ type IncreasePositionPreSwapEvent struct {
 }
 
 func (obj IncreasePositionPreSwapEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `TransferAmount` param:
+	// Serialize `TransferAmount`:
 	err = encoder.Encode(obj.TransferAmount)
 	if err != nil {
 		return errors.NewField("TransferAmount", err)
 	}
-	// Serialize `CollateralCustodyPreSwapAmount` param:
+	// Serialize `CollateralCustodyPreSwapAmount`:
 	err = encoder.Encode(obj.CollateralCustodyPreSwapAmount)
 	if err != nil {
 		return errors.NewField("CollateralCustodyPreSwapAmount", err)
@@ -6920,87 +6920,87 @@ type DecreasePositionEvent struct {
 }
 
 func (obj DecreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionSizeUsd` param:
+	// Serialize `PositionSizeUsd`:
 	err = encoder.Encode(obj.PositionSizeUsd)
 	if err != nil {
 		return errors.NewField("PositionSizeUsd", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `PositionRequestMint` param:
+	// Serialize `PositionRequestMint`:
 	err = encoder.Encode(obj.PositionRequestMint)
 	if err != nil {
 		return errors.NewField("PositionRequestMint", err)
 	}
-	// Serialize `PositionRequestChange` param:
+	// Serialize `PositionRequestChange`:
 	err = encoder.Encode(obj.PositionRequestChange)
 	if err != nil {
 		return errors.NewField("PositionRequestChange", err)
 	}
-	// Serialize `PositionRequestType` param:
+	// Serialize `PositionRequestType`:
 	err = encoder.Encode(obj.PositionRequestType)
 	if err != nil {
 		return errors.NewField("PositionRequestType", err)
 	}
-	// Serialize `HasProfit` param:
+	// Serialize `HasProfit`:
 	err = encoder.Encode(obj.HasProfit)
 	if err != nil {
 		return errors.NewField("HasProfit", err)
 	}
-	// Serialize `PnlDelta` param:
+	// Serialize `PnlDelta`:
 	err = encoder.Encode(obj.PnlDelta)
 	if err != nil {
 		return errors.NewField("PnlDelta", err)
 	}
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `TransferAmountUsd` param:
+	// Serialize `TransferAmountUsd`:
 	err = encoder.Encode(obj.TransferAmountUsd)
 	if err != nil {
 		return errors.NewField("TransferAmountUsd", err)
 	}
-	// Serialize `TransferToken` param (optional):
+	// Serialize `TransferToken` (optional):
 	{
 		if obj.TransferToken == nil {
 			err = encoder.WriteOption(false)
@@ -7018,12 +7018,12 @@ func (obj DecreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (er
 			}
 		}
 	}
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `PriceSlippage` param (optional):
+	// Serialize `PriceSlippage` (optional):
 	{
 		if obj.PriceSlippage == nil {
 			err = encoder.WriteOption(false)
@@ -7041,17 +7041,17 @@ func (obj DecreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (er
 			}
 		}
 	}
-	// Serialize `FeeUsd` param:
+	// Serialize `FeeUsd`:
 	err = encoder.Encode(obj.FeeUsd)
 	if err != nil {
 		return errors.NewField("FeeUsd", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `Referral` param (optional):
+	// Serialize `Referral` (optional):
 	{
 		if obj.Referral == nil {
 			err = encoder.WriteOption(false)
@@ -7069,37 +7069,37 @@ func (obj DecreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (er
 			}
 		}
 	}
-	// Serialize `PositionFeeUsd` param:
+	// Serialize `PositionFeeUsd`:
 	err = encoder.Encode(obj.PositionFeeUsd)
 	if err != nil {
 		return errors.NewField("PositionFeeUsd", err)
 	}
-	// Serialize `FundingFeeUsd` param:
+	// Serialize `FundingFeeUsd`:
 	err = encoder.Encode(obj.FundingFeeUsd)
 	if err != nil {
 		return errors.NewField("FundingFeeUsd", err)
 	}
-	// Serialize `PriceImpactFeeUsd` param:
+	// Serialize `PriceImpactFeeUsd`:
 	err = encoder.Encode(obj.PriceImpactFeeUsd)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeUsd", err)
 	}
-	// Serialize `OriginalPositionCollateralUsd` param:
+	// Serialize `OriginalPositionCollateralUsd`:
 	err = encoder.Encode(obj.OriginalPositionCollateralUsd)
 	if err != nil {
 		return errors.NewField("OriginalPositionCollateralUsd", err)
 	}
-	// Serialize `PositionCollateralUsd` param:
+	// Serialize `PositionCollateralUsd`:
 	err = encoder.Encode(obj.PositionCollateralUsd)
 	if err != nil {
 		return errors.NewField("PositionCollateralUsd", err)
 	}
-	// Serialize `PositionOpenTime` param:
+	// Serialize `PositionOpenTime`:
 	err = encoder.Encode(obj.PositionOpenTime)
 	if err != nil {
 		return errors.NewField("PositionOpenTime", err)
 	}
-	// Serialize `PositionPrice` param:
+	// Serialize `PositionPrice`:
 	err = encoder.Encode(obj.PositionPrice)
 	if err != nil {
 		return errors.NewField("PositionPrice", err)
@@ -7314,17 +7314,17 @@ type DecreasePositionPostSwapEvent struct {
 }
 
 func (obj DecreasePositionPostSwapEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `SwapAmount` param:
+	// Serialize `SwapAmount`:
 	err = encoder.Encode(obj.SwapAmount)
 	if err != nil {
 		return errors.NewField("SwapAmount", err)
 	}
-	// Serialize `JupiterMinimumOut` param (optional):
+	// Serialize `JupiterMinimumOut` (optional):
 	{
 		if obj.JupiterMinimumOut == nil {
 			err = encoder.WriteOption(false)
@@ -7427,122 +7427,122 @@ type LiquidateFullPositionEvent struct {
 }
 
 func (obj LiquidateFullPositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionCollateralMint` param:
+	// Serialize `PositionCollateralMint`:
 	err = encoder.Encode(obj.PositionCollateralMint)
 	if err != nil {
 		return errors.NewField("PositionCollateralMint", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `PositionSizeUsd` param:
+	// Serialize `PositionSizeUsd`:
 	err = encoder.Encode(obj.PositionSizeUsd)
 	if err != nil {
 		return errors.NewField("PositionSizeUsd", err)
 	}
-	// Serialize `HasProfit` param:
+	// Serialize `HasProfit`:
 	err = encoder.Encode(obj.HasProfit)
 	if err != nil {
 		return errors.NewField("HasProfit", err)
 	}
-	// Serialize `PnlDelta` param:
+	// Serialize `PnlDelta`:
 	err = encoder.Encode(obj.PnlDelta)
 	if err != nil {
 		return errors.NewField("PnlDelta", err)
 	}
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `TransferAmountUsd` param:
+	// Serialize `TransferAmountUsd`:
 	err = encoder.Encode(obj.TransferAmountUsd)
 	if err != nil {
 		return errors.NewField("TransferAmountUsd", err)
 	}
-	// Serialize `TransferToken` param:
+	// Serialize `TransferToken`:
 	err = encoder.Encode(obj.TransferToken)
 	if err != nil {
 		return errors.NewField("TransferToken", err)
 	}
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `FeeUsd` param:
+	// Serialize `FeeUsd`:
 	err = encoder.Encode(obj.FeeUsd)
 	if err != nil {
 		return errors.NewField("FeeUsd", err)
 	}
-	// Serialize `LiquidationFeeUsd` param:
+	// Serialize `LiquidationFeeUsd`:
 	err = encoder.Encode(obj.LiquidationFeeUsd)
 	if err != nil {
 		return errors.NewField("LiquidationFeeUsd", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `PositionFeeUsd` param:
+	// Serialize `PositionFeeUsd`:
 	err = encoder.Encode(obj.PositionFeeUsd)
 	if err != nil {
 		return errors.NewField("PositionFeeUsd", err)
 	}
-	// Serialize `FundingFeeUsd` param:
+	// Serialize `FundingFeeUsd`:
 	err = encoder.Encode(obj.FundingFeeUsd)
 	if err != nil {
 		return errors.NewField("FundingFeeUsd", err)
 	}
-	// Serialize `PriceImpactFeeUsd` param:
+	// Serialize `PriceImpactFeeUsd`:
 	err = encoder.Encode(obj.PriceImpactFeeUsd)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeUsd", err)
 	}
-	// Serialize `OriginalPositionCollateralUsd` param:
+	// Serialize `OriginalPositionCollateralUsd`:
 	err = encoder.Encode(obj.OriginalPositionCollateralUsd)
 	if err != nil {
 		return errors.NewField("OriginalPositionCollateralUsd", err)
 	}
-	// Serialize `PositionCollateralUsd` param:
+	// Serialize `PositionCollateralUsd`:
 	err = encoder.Encode(obj.PositionCollateralUsd)
 	if err != nil {
 		return errors.NewField("PositionCollateralUsd", err)
 	}
-	// Serialize `PositionOpenTime` param:
+	// Serialize `PositionOpenTime`:
 	err = encoder.Encode(obj.PositionOpenTime)
 	if err != nil {
 		return errors.NewField("PositionOpenTime", err)
 	}
-	// Serialize `PositionPrice` param:
+	// Serialize `PositionPrice`:
 	err = encoder.Encode(obj.PositionPrice)
 	if err != nil {
 		return errors.NewField("PositionPrice", err)
@@ -7715,52 +7715,52 @@ type PoolSwapEvent struct {
 }
 
 func (obj PoolSwapEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `ReceivingCustodyKey` param:
+	// Serialize `ReceivingCustodyKey`:
 	err = encoder.Encode(obj.ReceivingCustodyKey)
 	if err != nil {
 		return errors.NewField("ReceivingCustodyKey", err)
 	}
-	// Serialize `DispensingCustodyKey` param:
+	// Serialize `DispensingCustodyKey`:
 	err = encoder.Encode(obj.DispensingCustodyKey)
 	if err != nil {
 		return errors.NewField("DispensingCustodyKey", err)
 	}
-	// Serialize `PoolKey` param:
+	// Serialize `PoolKey`:
 	err = encoder.Encode(obj.PoolKey)
 	if err != nil {
 		return errors.NewField("PoolKey", err)
 	}
-	// Serialize `AmountIn` param:
+	// Serialize `AmountIn`:
 	err = encoder.Encode(obj.AmountIn)
 	if err != nil {
 		return errors.NewField("AmountIn", err)
 	}
-	// Serialize `AmountOut` param:
+	// Serialize `AmountOut`:
 	err = encoder.Encode(obj.AmountOut)
 	if err != nil {
 		return errors.NewField("AmountOut", err)
 	}
-	// Serialize `SwapUsdAmount` param:
+	// Serialize `SwapUsdAmount`:
 	err = encoder.Encode(obj.SwapUsdAmount)
 	if err != nil {
 		return errors.NewField("SwapUsdAmount", err)
 	}
-	// Serialize `AmountOutAfterFees` param:
+	// Serialize `AmountOutAfterFees`:
 	err = encoder.Encode(obj.AmountOutAfterFees)
 	if err != nil {
 		return errors.NewField("AmountOutAfterFees", err)
 	}
-	// Serialize `FeeBps` param:
+	// Serialize `FeeBps`:
 	err = encoder.Encode(obj.FeeBps)
 	if err != nil {
 		return errors.NewField("FeeBps", err)
 	}
-	// Serialize `OwnerKey` param:
+	// Serialize `OwnerKey`:
 	err = encoder.Encode(obj.OwnerKey)
 	if err != nil {
 		return errors.NewField("OwnerKey", err)
 	}
-	// Serialize `ReceivingAccountKey` param:
+	// Serialize `ReceivingAccountKey`:
 	err = encoder.Encode(obj.ReceivingAccountKey)
 	if err != nil {
 		return errors.NewField("ReceivingAccountKey", err)
@@ -7863,52 +7863,52 @@ type PoolSwapExactOutEvent struct {
 }
 
 func (obj PoolSwapExactOutEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `ReceivingCustodyKey` param:
+	// Serialize `ReceivingCustodyKey`:
 	err = encoder.Encode(obj.ReceivingCustodyKey)
 	if err != nil {
 		return errors.NewField("ReceivingCustodyKey", err)
 	}
-	// Serialize `DispensingCustodyKey` param:
+	// Serialize `DispensingCustodyKey`:
 	err = encoder.Encode(obj.DispensingCustodyKey)
 	if err != nil {
 		return errors.NewField("DispensingCustodyKey", err)
 	}
-	// Serialize `PoolKey` param:
+	// Serialize `PoolKey`:
 	err = encoder.Encode(obj.PoolKey)
 	if err != nil {
 		return errors.NewField("PoolKey", err)
 	}
-	// Serialize `AmountIn` param:
+	// Serialize `AmountIn`:
 	err = encoder.Encode(obj.AmountIn)
 	if err != nil {
 		return errors.NewField("AmountIn", err)
 	}
-	// Serialize `AmountInAfterFees` param:
+	// Serialize `AmountInAfterFees`:
 	err = encoder.Encode(obj.AmountInAfterFees)
 	if err != nil {
 		return errors.NewField("AmountInAfterFees", err)
 	}
-	// Serialize `AmountOut` param:
+	// Serialize `AmountOut`:
 	err = encoder.Encode(obj.AmountOut)
 	if err != nil {
 		return errors.NewField("AmountOut", err)
 	}
-	// Serialize `SwapUsdAmount` param:
+	// Serialize `SwapUsdAmount`:
 	err = encoder.Encode(obj.SwapUsdAmount)
 	if err != nil {
 		return errors.NewField("SwapUsdAmount", err)
 	}
-	// Serialize `FeeBps` param:
+	// Serialize `FeeBps`:
 	err = encoder.Encode(obj.FeeBps)
 	if err != nil {
 		return errors.NewField("FeeBps", err)
 	}
-	// Serialize `OwnerKey` param:
+	// Serialize `OwnerKey`:
 	err = encoder.Encode(obj.OwnerKey)
 	if err != nil {
 		return errors.NewField("OwnerKey", err)
 	}
-	// Serialize `ReceivingAccountKey` param:
+	// Serialize `ReceivingAccountKey`:
 	err = encoder.Encode(obj.ReceivingAccountKey)
 	if err != nil {
 		return errors.NewField("ReceivingAccountKey", err)
@@ -8011,52 +8011,52 @@ type AddLiquidityEvent struct {
 }
 
 func (obj AddLiquidityEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `CustodyKey` param:
+	// Serialize `CustodyKey`:
 	err = encoder.Encode(obj.CustodyKey)
 	if err != nil {
 		return errors.NewField("CustodyKey", err)
 	}
-	// Serialize `PoolKey` param:
+	// Serialize `PoolKey`:
 	err = encoder.Encode(obj.PoolKey)
 	if err != nil {
 		return errors.NewField("PoolKey", err)
 	}
-	// Serialize `TokenAmountIn` param:
+	// Serialize `TokenAmountIn`:
 	err = encoder.Encode(obj.TokenAmountIn)
 	if err != nil {
 		return errors.NewField("TokenAmountIn", err)
 	}
-	// Serialize `PrePoolAmountUsd` param:
+	// Serialize `PrePoolAmountUsd`:
 	err = encoder.Encode(obj.PrePoolAmountUsd)
 	if err != nil {
 		return errors.NewField("PrePoolAmountUsd", err)
 	}
-	// Serialize `TokenAmountUsd` param:
+	// Serialize `TokenAmountUsd`:
 	err = encoder.Encode(obj.TokenAmountUsd)
 	if err != nil {
 		return errors.NewField("TokenAmountUsd", err)
 	}
-	// Serialize `FeeBps` param:
+	// Serialize `FeeBps`:
 	err = encoder.Encode(obj.FeeBps)
 	if err != nil {
 		return errors.NewField("FeeBps", err)
 	}
-	// Serialize `TokenAmountAfterFee` param:
+	// Serialize `TokenAmountAfterFee`:
 	err = encoder.Encode(obj.TokenAmountAfterFee)
 	if err != nil {
 		return errors.NewField("TokenAmountAfterFee", err)
 	}
-	// Serialize `MintAmountUsd` param:
+	// Serialize `MintAmountUsd`:
 	err = encoder.Encode(obj.MintAmountUsd)
 	if err != nil {
 		return errors.NewField("MintAmountUsd", err)
 	}
-	// Serialize `LpAmount` param:
+	// Serialize `LpAmount`:
 	err = encoder.Encode(obj.LpAmount)
 	if err != nil {
 		return errors.NewField("LpAmount", err)
 	}
-	// Serialize `PostPoolAmountUsd` param:
+	// Serialize `PostPoolAmountUsd`:
 	err = encoder.Encode(obj.PostPoolAmountUsd)
 	if err != nil {
 		return errors.NewField("PostPoolAmountUsd", err)
@@ -8157,42 +8157,42 @@ type RemoveLiquidityEvent struct {
 }
 
 func (obj RemoveLiquidityEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `CustodyKey` param:
+	// Serialize `CustodyKey`:
 	err = encoder.Encode(obj.CustodyKey)
 	if err != nil {
 		return errors.NewField("CustodyKey", err)
 	}
-	// Serialize `PoolKey` param:
+	// Serialize `PoolKey`:
 	err = encoder.Encode(obj.PoolKey)
 	if err != nil {
 		return errors.NewField("PoolKey", err)
 	}
-	// Serialize `LpAmountIn` param:
+	// Serialize `LpAmountIn`:
 	err = encoder.Encode(obj.LpAmountIn)
 	if err != nil {
 		return errors.NewField("LpAmountIn", err)
 	}
-	// Serialize `RemoveAmountUsd` param:
+	// Serialize `RemoveAmountUsd`:
 	err = encoder.Encode(obj.RemoveAmountUsd)
 	if err != nil {
 		return errors.NewField("RemoveAmountUsd", err)
 	}
-	// Serialize `FeeBps` param:
+	// Serialize `FeeBps`:
 	err = encoder.Encode(obj.FeeBps)
 	if err != nil {
 		return errors.NewField("FeeBps", err)
 	}
-	// Serialize `RemoveTokenAmount` param:
+	// Serialize `RemoveTokenAmount`:
 	err = encoder.Encode(obj.RemoveTokenAmount)
 	if err != nil {
 		return errors.NewField("RemoveTokenAmount", err)
 	}
-	// Serialize `TokenAmountAfterFee` param:
+	// Serialize `TokenAmountAfterFee`:
 	err = encoder.Encode(obj.TokenAmountAfterFee)
 	if err != nil {
 		return errors.NewField("TokenAmountAfterFee", err)
 	}
-	// Serialize `PostPoolAmountUsd` param:
+	// Serialize `PostPoolAmountUsd`:
 	err = encoder.Encode(obj.PostPoolAmountUsd)
 	if err != nil {
 		return errors.NewField("PostPoolAmountUsd", err)
@@ -8288,67 +8288,67 @@ type InstantCreateLimitOrderEvent struct {
 }
 
 func (obj InstantCreateLimitOrderEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralMint` param:
+	// Serialize `PositionCollateralMint`:
 	err = encoder.Encode(obj.PositionCollateralMint)
 	if err != nil {
 		return errors.NewField("PositionCollateralMint", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionRequestKey` param:
+	// Serialize `PositionRequestKey`:
 	err = encoder.Encode(obj.PositionRequestKey)
 	if err != nil {
 		return errors.NewField("PositionRequestKey", err)
 	}
-	// Serialize `PositionRequestMint` param:
+	// Serialize `PositionRequestMint`:
 	err = encoder.Encode(obj.PositionRequestMint)
 	if err != nil {
 		return errors.NewField("PositionRequestMint", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralDelta` param:
+	// Serialize `CollateralDelta`:
 	err = encoder.Encode(obj.CollateralDelta)
 	if err != nil {
 		return errors.NewField("CollateralDelta", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
@@ -8476,87 +8476,87 @@ type InstantIncreasePositionEvent struct {
 }
 
 func (obj InstantIncreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionSizeUsd` param:
+	// Serialize `PositionSizeUsd`:
 	err = encoder.Encode(obj.PositionSizeUsd)
 	if err != nil {
 		return errors.NewField("PositionSizeUsd", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `CollateralUsdDelta` param:
+	// Serialize `CollateralUsdDelta`:
 	err = encoder.Encode(obj.CollateralUsdDelta)
 	if err != nil {
 		return errors.NewField("CollateralUsdDelta", err)
 	}
-	// Serialize `CollateralTokenDelta` param:
+	// Serialize `CollateralTokenDelta`:
 	err = encoder.Encode(obj.CollateralTokenDelta)
 	if err != nil {
 		return errors.NewField("CollateralTokenDelta", err)
 	}
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `PriceSlippage` param:
+	// Serialize `PriceSlippage`:
 	err = encoder.Encode(obj.PriceSlippage)
 	if err != nil {
 		return errors.NewField("PriceSlippage", err)
 	}
-	// Serialize `FeeToken` param:
+	// Serialize `FeeToken`:
 	err = encoder.Encode(obj.FeeToken)
 	if err != nil {
 		return errors.NewField("FeeToken", err)
 	}
-	// Serialize `FeeUsd` param:
+	// Serialize `FeeUsd`:
 	err = encoder.Encode(obj.FeeUsd)
 	if err != nil {
 		return errors.NewField("FeeUsd", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `Referral` param (optional):
+	// Serialize `Referral` (optional):
 	{
 		if obj.Referral == nil {
 			err = encoder.WriteOption(false)
@@ -8574,17 +8574,17 @@ func (obj InstantIncreasePositionEvent) MarshalWithEncoder(encoder *binary.Encod
 			}
 		}
 	}
-	// Serialize `PositionFeeUsd` param:
+	// Serialize `PositionFeeUsd`:
 	err = encoder.Encode(obj.PositionFeeUsd)
 	if err != nil {
 		return errors.NewField("PositionFeeUsd", err)
 	}
-	// Serialize `FundingFeeUsd` param:
+	// Serialize `FundingFeeUsd`:
 	err = encoder.Encode(obj.FundingFeeUsd)
 	if err != nil {
 		return errors.NewField("FundingFeeUsd", err)
 	}
-	// Serialize `PriceImpactFeeUsd` param:
+	// Serialize `PriceImpactFeeUsd`:
 	err = encoder.Encode(obj.PriceImpactFeeUsd)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeUsd", err)
@@ -8761,97 +8761,97 @@ type InstantDecreasePositionEvent struct {
 }
 
 func (obj InstantDecreasePositionEvent) MarshalWithEncoder(encoder *binary.Encoder) (err error) {
-	// Serialize `PositionKey` param:
+	// Serialize `PositionKey`:
 	err = encoder.Encode(obj.PositionKey)
 	if err != nil {
 		return errors.NewField("PositionKey", err)
 	}
-	// Serialize `PositionSide` param:
+	// Serialize `PositionSide`:
 	err = encoder.Encode(obj.PositionSide)
 	if err != nil {
 		return errors.NewField("PositionSide", err)
 	}
-	// Serialize `PositionCustody` param:
+	// Serialize `PositionCustody`:
 	err = encoder.Encode(obj.PositionCustody)
 	if err != nil {
 		return errors.NewField("PositionCustody", err)
 	}
-	// Serialize `PositionCollateralCustody` param:
+	// Serialize `PositionCollateralCustody`:
 	err = encoder.Encode(obj.PositionCollateralCustody)
 	if err != nil {
 		return errors.NewField("PositionCollateralCustody", err)
 	}
-	// Serialize `PositionSizeUsd` param:
+	// Serialize `PositionSizeUsd`:
 	err = encoder.Encode(obj.PositionSizeUsd)
 	if err != nil {
 		return errors.NewField("PositionSizeUsd", err)
 	}
-	// Serialize `PositionMint` param:
+	// Serialize `PositionMint`:
 	err = encoder.Encode(obj.PositionMint)
 	if err != nil {
 		return errors.NewField("PositionMint", err)
 	}
-	// Serialize `DesiredMint` param:
+	// Serialize `DesiredMint`:
 	err = encoder.Encode(obj.DesiredMint)
 	if err != nil {
 		return errors.NewField("DesiredMint", err)
 	}
-	// Serialize `HasProfit` param:
+	// Serialize `HasProfit`:
 	err = encoder.Encode(obj.HasProfit)
 	if err != nil {
 		return errors.NewField("HasProfit", err)
 	}
-	// Serialize `PnlDelta` param:
+	// Serialize `PnlDelta`:
 	err = encoder.Encode(obj.PnlDelta)
 	if err != nil {
 		return errors.NewField("PnlDelta", err)
 	}
-	// Serialize `Owner` param:
+	// Serialize `Owner`:
 	err = encoder.Encode(obj.Owner)
 	if err != nil {
 		return errors.NewField("Owner", err)
 	}
-	// Serialize `Pool` param:
+	// Serialize `Pool`:
 	err = encoder.Encode(obj.Pool)
 	if err != nil {
 		return errors.NewField("Pool", err)
 	}
-	// Serialize `SizeUsdDelta` param:
+	// Serialize `SizeUsdDelta`:
 	err = encoder.Encode(obj.SizeUsdDelta)
 	if err != nil {
 		return errors.NewField("SizeUsdDelta", err)
 	}
-	// Serialize `TransferAmountUsd` param:
+	// Serialize `TransferAmountUsd`:
 	err = encoder.Encode(obj.TransferAmountUsd)
 	if err != nil {
 		return errors.NewField("TransferAmountUsd", err)
 	}
-	// Serialize `TransferToken` param:
+	// Serialize `TransferToken`:
 	err = encoder.Encode(obj.TransferToken)
 	if err != nil {
 		return errors.NewField("TransferToken", err)
 	}
-	// Serialize `Price` param:
+	// Serialize `Price`:
 	err = encoder.Encode(obj.Price)
 	if err != nil {
 		return errors.NewField("Price", err)
 	}
-	// Serialize `PriceSlippage` param:
+	// Serialize `PriceSlippage`:
 	err = encoder.Encode(obj.PriceSlippage)
 	if err != nil {
 		return errors.NewField("PriceSlippage", err)
 	}
-	// Serialize `FeeUsd` param:
+	// Serialize `FeeUsd`:
 	err = encoder.Encode(obj.FeeUsd)
 	if err != nil {
 		return errors.NewField("FeeUsd", err)
 	}
-	// Serialize `OpenTime` param:
+	// Serialize `OpenTime`:
 	err = encoder.Encode(obj.OpenTime)
 	if err != nil {
 		return errors.NewField("OpenTime", err)
 	}
-	// Serialize `Referral` param (optional):
+	// Serialize `Referral` (optional):
 	{
 		if obj.Referral == nil {
 			err = encoder.WriteOption(false)
@@ -8869,37 +8869,37 @@ func (obj InstantDecreasePositionEvent) MarshalWithEncoder(encoder *binary.Encod
 			}
 		}
 	}
-	// Serialize `PositionFeeUsd` param:
+	// Serialize `PositionFeeUsd`:
 	err = encoder.Encode(obj.PositionFeeUsd)
 	if err != nil {
 		return errors.NewField("PositionFeeUsd", err)
 	}
-	// Serialize `FundingFeeUsd` param:
+	// Serialize `FundingFeeUsd`:
 	err = encoder.Encode(obj.FundingFeeUsd)
 	if err != nil {
 		return errors.NewField("FundingFeeUsd", err)
 	}
-	// Serialize `OriginalPositionCollateralUsd` param:
+	// Serialize `OriginalPositionCollateralUsd`:
 	err = encoder.Encode(obj.OriginalPositionCollateralUsd)
 	if err != nil {
 		return errors.NewField("OriginalPositionCollateralUsd", err)
 	}
-	// Serialize `PositionCollateralUsd` param:
+	// Serialize `PositionCollateralUsd`:
 	err = encoder.Encode(obj.PositionCollateralUsd)
 	if err != nil {
 		return errors.NewField("PositionCollateralUsd", err)
 	}
-	// Serialize `PriceImpactFeeUsd` param:
+	// Serialize `PriceImpactFeeUsd`:
 	err = encoder.Encode(obj.PriceImpactFeeUsd)
 	if err != nil {
 		return errors.NewField("PriceImpactFeeUsd", err)
 	}
-	// Serialize `PositionOpenTime` param:
+	// Serialize `PositionOpenTime`:
 	err = encoder.Encode(obj.PositionOpenTime)
 	if err != nil {
 		return errors.NewField("PositionOpenTime", err)
 	}
-	// Serialize `PositionPrice` param:
+	// Serialize `PositionPrice`:
 	err = encoder.Encode(obj.PositionPrice)
 	if err != nil {
 		return errors.NewField("PositionPrice", err)

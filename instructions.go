@@ -5,8 +5,9 @@ package perpetuals
 
 import (
 	"bytes"
-	binary "github.com/gagliardetto/binary"
+	"fmt"
 	errors "github.com/gagliardetto/anchor-go/errors"
+	binary "github.com/gagliardetto/binary"
 	solanago "github.com/gagliardetto/solana-go"
 )
 
@@ -25,20 +26,17 @@ func NewInitInstruction(
 	systemProgramAccount solanago.PublicKey,
 	tokenProgramAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_Init[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -88,20 +86,17 @@ func NewAddPoolInstruction(
 	tokenProgramAccount solanago.PublicKey,
 	rentAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_AddPool[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -153,20 +148,17 @@ func NewAddCustodyInstruction(
 	tokenProgramAccount solanago.PublicKey,
 	rentAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_AddCustody[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -215,20 +207,17 @@ func NewSetCustodyConfigInstruction(
 	perpetualsAccount solanago.PublicKey,
 	custodyAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_SetCustodyConfig[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -263,20 +252,17 @@ func NewSetPoolConfigInstruction(
 	perpetualsAccount solanago.PublicKey,
 	poolAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_SetPoolConfig[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -310,20 +296,17 @@ func NewSetPerpetualsConfigInstruction(
 	adminAccount solanago.PublicKey,
 	perpetualsAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_SetPerpetualsConfig[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -356,20 +339,17 @@ func NewTransferAdminInstruction(
 	newAdminAccount solanago.PublicKey,
 	perpetualsAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_TransferAdmin[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -411,20 +391,17 @@ func NewWithdrawFees2Instruction(
 	receivingTokenAccountAccount solanago.PublicKey,
 	tokenProgramAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_WithdrawFees2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -479,20 +456,17 @@ func NewCreateTokenMetadataInstruction(
 	systemProgramAccount solanago.PublicKey,
 	rentAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_CreateTokenMetadata[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -622,20 +596,17 @@ func NewOperatorSetCustodyConfigInstruction(
 	operatorAccount solanago.PublicKey,
 	custodyAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_OperatorSetCustodyConfig[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -667,20 +638,17 @@ func NewOperatorSetPoolConfigInstruction(
 	operatorAccount solanago.PublicKey,
 	poolAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_OperatorSetPoolConfig[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -716,20 +684,17 @@ func NewTestInitInstruction(
 	systemProgramAccount solanago.PublicKey,
 	tokenProgramAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_TestInit[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -769,20 +734,17 @@ func NewSetTestTimeInstruction(
 	adminAccount solanago.PublicKey,
 	perpetualsAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_SetTestTime[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -855,20 +817,17 @@ func NewSwap2Instruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_Swap2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -942,20 +901,17 @@ func NewAddLiquidity2Instruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_AddLiquidity2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1023,20 +979,17 @@ func NewRemoveLiquidity2Instruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_RemoveLiquidity2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1106,20 +1059,17 @@ func NewCreateIncreasePositionMarketRequestInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_CreateIncreasePositionMarketRequest[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1195,20 +1145,17 @@ func NewCreateDecreasePositionRequest2Instruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_CreateDecreasePositionRequest2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1286,20 +1233,17 @@ func NewCreateDecreasePositionMarketRequestInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_CreateDecreasePositionMarketRequest[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1365,20 +1309,17 @@ func NewUpdateDecreasePositionRequest2Instruction(
 	custodyDovesPriceAccountAccount solanago.PublicKey,
 	custodyPythnetPriceAccountAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_UpdateDecreasePositionRequest2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1430,20 +1371,17 @@ func NewClosePositionRequestInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_ClosePositionRequest[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1561,20 +1499,17 @@ func NewIncreasePosition4Instruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_IncreasePosition4[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1643,20 +1578,17 @@ func NewIncreasePositionPreSwapInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_IncreasePositionPreSwap[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1724,20 +1656,17 @@ func NewIncreasePositionWithInternalSwapInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_IncreasePositionWithInternalSwap[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1821,20 +1750,17 @@ func NewDecreasePosition4Instruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_DecreasePosition4[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -1918,20 +1844,17 @@ func NewDecreasePositionWithInternalSwapInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_DecreasePositionWithInternalSwap[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2014,20 +1937,17 @@ func NewLiquidateFullPosition4Instruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_LiquidateFullPosition4[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2082,20 +2002,17 @@ func NewRefreshAssetsUnderManagementInstruction(
 	perpetualsAccount solanago.PublicKey,
 	poolAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_RefreshAssetsUnderManagement[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2147,20 +2064,17 @@ func NewInstantCreateTpslInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_InstantCreateTpsl[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2246,20 +2160,17 @@ func NewInstantCreateLimitOrderInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_InstantCreateLimitOrder[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2345,20 +2256,17 @@ func NewInstantIncreasePositionInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_InstantIncreasePosition[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2446,20 +2354,17 @@ func NewInstantDecreasePositionInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_InstantDecreasePosition[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2539,20 +2444,17 @@ func NewInstantUpdateLimitOrderInstruction(
 	custodyDovesPriceAccountAccount solanago.PublicKey,
 	custodyPythnetPriceAccountAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_InstantUpdateLimitOrder[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2610,20 +2512,17 @@ func NewInstantUpdateTpslInstruction(
 	eventAuthorityAccount solanago.PublicKey,
 	programAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_InstantUpdateTpsl[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2679,20 +2578,17 @@ func NewGetAddLiquidityAmountAndFee2Instruction(
 	custodyPythnetPriceAccountAccount solanago.PublicKey,
 	lpTokenMintAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_GetAddLiquidityAmountAndFee2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2736,20 +2632,17 @@ func NewGetRemoveLiquidityAmountAndFee2Instruction(
 	custodyPythnetPriceAccountAccount solanago.PublicKey,
 	lpTokenMintAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_GetRemoveLiquidityAmountAndFee2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
@@ -2789,20 +2682,17 @@ func NewGetAssetsUnderManagement2Instruction(
 	perpetualsAccount solanago.PublicKey,
 	poolAccount solanago.PublicKey,
 ) (solanago.Instruction, error) {
-
-	// Encode the arguments into the instruction data.
 	buf__ := new(bytes.Buffer)
 	enc__ := binary.NewBorshEncoder(buf__)
 
 	// Encode the instruction discriminator.
 	err := enc__.WriteBytes(Instruction_GetAssetsUnderManagement2[:], false)
 	if err != nil {
-		return nil, err
+		return nil, fmt.Errorf("failed to write instruction discriminator: %w", err)
 	}
-
-	// Encode the parameter: paramsParam
 	{
-		err := enc__.Encode(paramsParam)
+		// Serialize `paramsParam`:
+		err = enc__.Encode(paramsParam)
 		if err != nil {
 			return nil, errors.NewField("paramsParam", err)
 		}
